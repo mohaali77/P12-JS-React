@@ -1,6 +1,18 @@
-nav {
+.navigateProfile {
   background: black;
+  width: 85px;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-nav .copiRyght {
-  color: #fff;
+.navigateProfile .sportSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navigateProfile img {
+  height: 45px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=Sidebar.css.map */

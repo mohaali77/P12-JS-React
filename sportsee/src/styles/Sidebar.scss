@@ -1,9 +1,22 @@
-nav {
+.navigateProfile {
     background: black;
+    width: 85px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    img {}
-
-    .copiRyght {
-        color: #fff
+    .sportSelection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+    img {
+        height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .copiRyght {}
 }

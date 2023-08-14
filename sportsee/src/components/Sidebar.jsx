@@ -7,11 +7,13 @@ import '../styles/Sidebar.css'
 
 export function Sidebar() {
     return <>
-        <nav>
-            <img src={meditate} alt="" />
-            <img src={musculation} alt="" />
-            <img src={ridebike} alt="" />
-            <img src={swim} alt="" />
+        <nav className='navigateProfile'>
+            <div className='sportSelection'>
+                <img src={meditate} alt="" />
+                <img src={musculation} alt="" />
+                <img src={ridebike} alt="" />
+                <img src={swim} alt="" />
+            </div>
             <div className='copiRyght'>Copiryght, SportSee 2020</div>
         </nav>
     </>
