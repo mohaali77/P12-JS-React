@@ -1,4 +1,5 @@
 import logo from '../images/logo.png'
+import '../styles/Header.css'
 
 export function Header() {
     return <>
@@ -12,5 +13,4 @@ export function Header() {
             </nav>
         </header>
     </>
-
 }
