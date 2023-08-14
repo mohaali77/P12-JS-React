@@ -3,7 +3,7 @@ import logo from '../images/logo.png'
 export function Header() {
     return <>
         <header>
-            <img src="" alt="" />
+            <img src={logo} alt="Logo du site web SportSee" />
             <nav>
                 <div>Accueil</div>
                 <div>Profil</div>
