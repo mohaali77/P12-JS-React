@@ -2,11 +2,17 @@ import '../styles/MacroNutrients/MacroNutrients.css'
 import '../styles/Header/Header.css'
 import '../styles/Sidebar/Sidebar.css'
 import '../styles/DailyActivity/DailyActivity.css'
+import '../styles/ProgressGraph/ProgressGraph.css'
+import '../styles/HexagonGraph/HexagonGraph.css'
+import '../styles/DurationGraph/DurationGraph.css'
 import '../styles/General.css'
 
 import { Sidebar } from '../components/Sidebar'
 import { MacroNutrients } from '../components/MacroNutrients'
 import { DailyActivity } from '../components/DailyActivity'
+import { DurationGraph } from '../components/DurationGraph'
+import { HexagonGraph } from '../components/HexagonGraph'
+import { ProgressGraph } from '../components/ProgressGraph'
 
 import iconProtein from '../images/macro/protein-icon.png'
 import iconCalories from '../images/macro/calories-icon.png'
@@ -20,7 +26,9 @@ export function ProfilePage() {
             <section className='dashbord'>
                 <DailyActivity />
                 <section className='graph_container'>
-
+                    <DurationGraph />
+                    <HexagonGraph />
+                    <ProgressGraph />
                 </section>
             </section>
 
