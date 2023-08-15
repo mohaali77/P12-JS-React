@@ -1,4 +1,4 @@
-import '../styles/MacroNutrients.css'
+import '../styles/MacroNutrients/MacroNutrients.css'
 
 export function MacroNutrients() {
     return <>

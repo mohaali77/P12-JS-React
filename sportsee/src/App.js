@@ -1,16 +1,11 @@
-import { Header } from "./components/Header";
-import { MacroNutrients } from "./components/MacroNutrients";
-import { Sidebar } from "./components/Sidebar";
-import './styles/General.css'
+import { Route, Routes } from "react-router-dom";
+import { ProfilePage } from "./pages/ProfilePage";
 
 function App() {
-  return <>
-    <Header />
-    <Sidebar />
-    <MacroNutrients />
-  </>
+  return <Routes>
+    <Route path="/" element={<ProfilePage />} />
+  </Routes>
 }
 
-
-
 export default App;
+
