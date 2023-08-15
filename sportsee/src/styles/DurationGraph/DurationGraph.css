@@ -1,5 +1,6 @@
 .durationGraph_container {
-  min-height: 183px;
-  min-width: 199px;
+  width: 227px;
+  height: 255px;
+  border-radius: 5px;
   background: green;
 }/*# sourceMappingURL=DurationGraph.css.map */

@@ -1,7 +1,7 @@
 .navigateProfile {
   background: black;
   width: 95px;
-  height: 900px;
+  height: 780px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,8 @@
   align-items: center;
 }
 .navigateProfile img {
-  height: 59px;
+  height: 50px;
+  width: 53px;
   margin-bottom: 10px;
 }
 .navigateProfile .copiRyght {

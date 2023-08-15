@@ -1,19 +1,18 @@
 .macro_container {
     .macro {
         background: #f4f4f4;
-        height: 104px;
-        width: 238px;
+        height: 114px;
+        width: 228px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         font-weight: bold;
 
 
         img {
             border-radius: 5px;
-            height: 50px;
-            width: 50px;
-            margin-right: 30px;
+            height: 53px;
+            width: 53px;
         }
 
         .values {
@@ -24,7 +23,7 @@
             }
 
             .values_name {
-                font-size: 12px;
+                font-size: 14px;
                 color: #74798C
             }
         }

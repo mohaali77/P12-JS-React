@@ -1,5 +1,6 @@
 .progressGraph_container {
-  min-height: 183px;
-  min-width: 199px;
+  width: 227px;
+  height: 255px;
+  border-radius: 5px;
   background: red;
 }/*# sourceMappingURL=ProgressGraph.css.map */
