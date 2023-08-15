@@ -1,4 +1,4 @@
-.macroNutrients_container {
+.macro_container .macro {
   background: #f4f4f4;
   height: 124px;
   width: 258px;
@@ -7,18 +7,18 @@
   justify-content: center;
   font-weight: bold;
 }
-.macroNutrients_container .img_macro {
+.macro_container .macro .img_macro {
   background: rgb(44, 123, 192);
   border-radius: 5px;
   height: 60px;
   width: 60px;
   margin-right: 30px;
 }
-.macroNutrients_container .values_macro .values {
+.macro_container .macro .values .values_number {
   color: #282D30;
   font-size: 20px;
 }
-.macroNutrients_container .values_macro .macro {
+.macro_container .macro .values .values_name {
   font-size: 14px;
   color: #74798C;
 }/*# sourceMappingURL=MacroNutrients.css.map */

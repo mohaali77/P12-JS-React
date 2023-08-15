@@ -1,12 +1,10 @@
-import '../styles/MacroNutrients/MacroNutrients.css'
-
 export function MacroNutrients() {
     return <>
-        <div className="macroNutrients_container">
+        <div className="macro">
             <div className="img_macro"></div>
-            <div className="values_macro">
-                <div className="values">1,930kCal</div>
-                <div className="macro">Calories</div>
+            <div className="values">
+                <div className="values_number">1,930kCal</div>
+                <div className="values_name">Calories</div>
             </div>
         </div>
     </>

@@ -3,8 +3,6 @@ import musculation from '../images/icon/musculation.png'
 import ridebike from '../images/icon/ridebike.png'
 import swim from '../images/icon/swim.png'
 
-import '../styles/Sidebar/Sidebar.css'
-
 export function Sidebar() {
     return <>
         <nav className='navigateProfile'>
