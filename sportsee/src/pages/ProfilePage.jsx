@@ -1,6 +1,7 @@
 import '../styles/MacroNutrients/MacroNutrients.css'
 import '../styles/Header/Header.css'
 import '../styles/Sidebar/Sidebar.css'
+import '../styles/DailyActivity/DailyActivity.css'
 import '../styles/General.css'
 
 import { Sidebar } from '../components/Sidebar'
@@ -24,8 +25,8 @@ export function ProfilePage() {
             </section>
 
             <section className="macro_container">
-                <MacroNutrients values_name='Proteines' img_macro={iconCalories} />
-                <MacroNutrients values_name='Calories' img_macro={iconProtein} />
+                <MacroNutrients values_name='Calories' img_macro={iconCalories} />
+                <MacroNutrients values_name='Proteines' img_macro={iconProtein} />
                 <MacroNutrients values_name='Lipides' img_macro={iconCarbs} />
                 <MacroNutrients values_name='Glucides' img_macro={iconFat} />
             </section>
