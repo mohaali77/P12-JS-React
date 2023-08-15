@@ -1,10 +1,10 @@
-export function MacroNutrients() {
+export function MacroNutrients({ img_macro, values_name }) {
     return <>
         <div className="macro">
-            <div className="img_macro"></div>
+            <img src={img_macro} alt="" />
             <div className="values">
                 <div className="values_number">1,930kCal</div>
-                <div className="values_name">Calories</div>
+                <div className="values_name">{values_name}</div>
             </div>
         </div>
     </>
