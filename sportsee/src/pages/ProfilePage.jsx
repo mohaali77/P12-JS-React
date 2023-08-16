@@ -6,7 +6,6 @@ import '../styles/ProgressGraph/ProgressGraph.css'
 import '../styles/HexagonGraph/HexagonGraph.css'
 import '../styles/DurationGraph/DurationGraph.css'
 import '../styles/ProfilePage/ProfilePage.css'
-
 import '../styles/General.css'
 
 import { Sidebar } from '../components/Sidebar'
