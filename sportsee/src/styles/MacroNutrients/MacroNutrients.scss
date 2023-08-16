@@ -30,3 +30,38 @@
 
     }
 }
+
+@media screen and (max-width: 1110px) {
+    .macro_container {
+        .macro {
+            background: #f4f4f4;
+            height: 95px;
+            width: 181px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-weight: bold;
+
+
+            img {
+                border-radius: 5px;
+                height: 53px;
+                width: 53px;
+            }
+
+            .values {
+
+                .values_number {
+                    color: #282D30;
+                    font-size: 18px;
+                }
+
+                .values_name {
+                    font-size: 13px;
+                    color: #74798C
+                }
+            }
+
+        }
+    }
+}

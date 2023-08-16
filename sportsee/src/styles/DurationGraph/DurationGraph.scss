@@ -4,3 +4,10 @@
     border-radius: 5px;
     background: green;
 }
+
+@media screen and (max-width: 1110px) {
+    .durationGraph_container {
+        width: 185px;
+        height: 195px;
+    }
+}

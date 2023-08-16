@@ -4,3 +4,10 @@
     border-radius: 5px;
     background: red;
 }
+
+@media screen and (max-width: 1110px) {
+    .progressGraph_container {
+        width: 185px;
+        height: 195px;
+    }
+}

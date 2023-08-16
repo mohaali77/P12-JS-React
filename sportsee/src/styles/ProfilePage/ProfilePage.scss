@@ -6,11 +6,17 @@
     .welcolme_container {
         width: 996px;
         margin-left: 90px;
-        margin-bottom: 70px;
+        margin-bottom: 50px;
+        margin-top: 50px;
 
         .welcolme_message {
             font-size: 40px;
             margin: 0px 0px 20px 0px;
+            font-weight: bold;
+
+            .red {
+                color: red;
+            }
         }
 
         .objective_message {}
@@ -36,4 +42,35 @@
     }
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1110px) {
+    .main_profile_container {
+
+        .welcolme_container {
+            width: 798px;
+            margin-left: 90px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+            .welcolme_message {
+                font-size: 40px;
+                margin: 0px 0px 20px 0px;
+                font-weight: bold;
+
+                .red {
+                    color: red;
+                }
+            }
+
+            .objective_message {}
+        }
+
+
+        .dashbord {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            margin-left: 90px;
+
+        }
+    }
+}

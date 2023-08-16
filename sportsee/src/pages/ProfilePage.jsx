@@ -26,7 +26,7 @@ export function ProfilePage() {
         <Sidebar />
         <main className='main_profile_container'>
             <section className='welcolme_container'>
-                <h1 className='welcolme_message'>Bonjour Thomas</h1>
+                <div className='welcolme_message'>Bonjour <span className='red'>Prénom</span></div>
                 <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
             </section>
             <section className='dashbord'>

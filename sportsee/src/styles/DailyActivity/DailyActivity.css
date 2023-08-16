@@ -4,4 +4,12 @@
   border-radius: 5px;
   margin-bottom: 20px;
   background: gray;
+}
+
+@media screen and (max-width: 1110px) {
+  .dailyActivity_container {
+    width: 597.22px;
+    height: 295px;
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=DailyActivity.css.map */

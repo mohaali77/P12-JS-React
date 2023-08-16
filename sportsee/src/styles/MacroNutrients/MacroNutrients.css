@@ -19,4 +19,29 @@
 .macro_container .macro .values .values_name {
   font-size: 13px;
   color: #74798C;
+}
+
+@media screen and (max-width: 1110px) {
+  .macro_container .macro {
+    background: #f4f4f4;
+    height: 95px;
+    width: 181px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+  }
+  .macro_container .macro img {
+    border-radius: 5px;
+    height: 53px;
+    width: 53px;
+  }
+  .macro_container .macro .values .values_number {
+    color: #282D30;
+    font-size: 18px;
+  }
+  .macro_container .macro .values .values_name {
+    font-size: 13px;
+    color: #74798C;
+  }
 }/*# sourceMappingURL=MacroNutrients.css.map */
