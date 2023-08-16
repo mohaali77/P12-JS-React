@@ -3,6 +3,14 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.main_profile_container .welcolme_container {
+  width: 996px;
+  margin-left: 90px;
+}
+.main_profile_container .welcolme_container .welcolme_message {
+  font-size: 40px;
+  margin: 0px 0px 0px 0px;
+}
 .main_profile_container .dashbord {
   display: flex;
   flex-direction: column;

@@ -24,11 +24,11 @@ import iconCarbs from '../images/macro/carbs-icon.png'
 export function ProfilePage() {
     return <>
         <Sidebar />
-        <section className='welcolme_container'>
-            <h1 className='welcolme_message'>Bonjour Thomas</h1>
-            <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
-        </section>
         <main className='main_profile_container'>
+            <section className='welcolme_container'>
+                <h1 className='welcolme_message'>Bonjour Thomas</h1>
+                <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
+            </section>
             <section className='dashbord'>
                 <DailyActivity />
                 <section className='graph_container'>

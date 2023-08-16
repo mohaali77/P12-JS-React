@@ -1,15 +1,20 @@
-.welcolme_container {
-
-
-    .welcolme_message {}
-
-    .objective_message {}
-}
-
 .main_profile_container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    .welcolme_container {
+        width: 996px;
+        margin-left: 90px;
+
+        .welcolme_message {
+            font-size: 40px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .objective_message {}
+    }
+
 
     .dashbord {
         display: flex;
