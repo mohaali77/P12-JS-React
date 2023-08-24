@@ -9,4 +9,5 @@ export function MacroNutrients({ img_macro, values_name }) {
         </div>
 
     </>
+
 }
