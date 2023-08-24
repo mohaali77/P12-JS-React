@@ -7,5 +7,6 @@ export function MacroNutrients({ img_macro, values_name }) {
                 <div className="values_name">{values_name}</div>
             </div>
         </div>
+
     </>
 }
