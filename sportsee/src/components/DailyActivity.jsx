@@ -62,11 +62,16 @@ export function DailyActivity() {
                     <div className="calories"><i class="fa-solid fa-circle"></i>Calories brûlées (kCal)</div>
                 </div>
             </div>
-            <ResponsiveContainer width="100%" height="80%">
-                <BarChart data={data}>
+            <ResponsiveContainer width="100%" height="60%">
+                <BarChart margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5
+                }} data={data}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
-                    <XAxis dataKey="day" tickLine={false} tickMargin={20} tickFormatter={formatXAxis} />
-                    <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={40} orientation="right" />
+                    <XAxis dataKey="day" tickLine={false} tickMargin={17} tickFormatter={formatXAxis} />
+                    <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={30} orientation="right" />
                     <Tooltip />
                     <Bar barSize={7} dataKey="kilogram" radius={[5, 5, 0, 0]} fill="#282D30" />
                     <Bar barSize={7} dataKey="calories" radius={[5, 5, 0, 0]} fill="#E60000" />

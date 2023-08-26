@@ -8,9 +8,13 @@
 .dailyActivity_container .title_calories_kg {
   font-size: 13px;
   display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+  margin: 0px 20px 50px 20px;
 }
 .dailyActivity_container .title_calories_kg .title {
   font-weight: bold;
+  font-size: 14px;
 }
 .dailyActivity_container .title_calories_kg .kg_calories {
   display: flex;
