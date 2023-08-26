@@ -74,7 +74,7 @@ export function DailyActivity() {
                     <Tooltip />
                     <Legend verticalAlign="top" />
                     <Bar barSize={7} dataKey="pv" radius={[5, 5, 0, 0]} fill="#282D30" />
-                    <Bar barSize={7} dataKey="uv" margin={5} radius={[5, 5, 0, 0]} fill="#E60000" />
+                    <Bar barSize={7} dataKey="uv" radius={[5, 5, 0, 0]} fill="#E60000" />
                 </BarChart>
             </ResponsiveContainer>
 
