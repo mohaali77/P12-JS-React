@@ -70,7 +70,7 @@ export function DailyActivity() {
                 >
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
                     <XAxis dataKey="name" />
-                    <YAxis YAxisId="right" tickCount={3} tickMargin={50} orientation="right" />
+                    <YAxis YAxisId="right" tickCount={3} orientation="right" />
                     <Tooltip />
                     <Legend verticalAlign="top" />
                     <Bar barSize={7} dataKey="pv" margin={5} radius={[5, 5, 0, 0]} fill="#282D30" />
