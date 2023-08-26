@@ -57,9 +57,9 @@ export function DailyActivity() {
         <section className="dailyActivity_container">
             <div className="title_calories_kg">
                 <div className="title">Activité quotidienne</div>
-                <div>
+                <div className="kg_calories">
                     <div className="kg"><i class="fa-solid fa-circle"></i>Poids (kg)</div>
-                    <div className="title"><i class="fa-solid fa-circle"></i>Calories brûlées (kCal)</div>
+                    <div className="calories"><i class="fa-solid fa-circle"></i>Calories brûlées (kCal)</div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height="80%">

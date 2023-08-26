@@ -5,6 +5,35 @@
   margin-bottom: 20px;
   background: #f4f4f4;
 }
+.dailyActivity_container .title_calories_kg {
+  font-size: 13px;
+  display: flex;
+}
+.dailyActivity_container .title_calories_kg .title {
+  font-weight: bold;
+}
+.dailyActivity_container .title_calories_kg .kg_calories {
+  display: flex;
+}
+.dailyActivity_container .title_calories_kg .kg_calories .kg {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.dailyActivity_container .title_calories_kg .kg_calories .kg i {
+  font-size: 10px;
+  color: #282D30;
+  margin-right: 8px;
+}
+.dailyActivity_container .title_calories_kg .kg_calories .calories {
+  display: flex;
+  align-items: center;
+}
+.dailyActivity_container .title_calories_kg .kg_calories .calories i {
+  font-size: 10px;
+  color: #E60000;
+  margin-right: 8px;
+}
 
 @media screen and (max-width: 1110px) {
   .dailyActivity_container {

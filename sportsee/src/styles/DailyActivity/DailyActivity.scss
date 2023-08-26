@@ -4,6 +4,42 @@
     border-radius: 5px;
     margin-bottom: 20px;
     background: #f4f4f4;
+
+    .title_calories_kg {
+        font-size: 13px;
+        display: flex;
+
+        .title {
+            font-weight: bold;
+        }
+
+        .kg_calories {
+            display: flex;
+
+            .kg {
+                display: flex;
+                align-items: center;
+                margin-right: 30px;
+
+                i {
+                    font-size: 10px;
+                    color: #282D30;
+                    margin-right: 8px;
+                }
+            }
+
+            .calories {
+                display: flex;
+                align-items: center;
+
+                i {
+                    font-size: 10px;
+                    color: #E60000;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1110px) {
