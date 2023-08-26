@@ -5,74 +5,71 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    ResponsiveContainer
+    ResponsiveContainer,
 } from "recharts";
+
+const formatXAxis = (tickItem) => {
+    const date = new Date(tickItem);
+    return `${date.getDate()}`;
+};
 
 export function DailyActivity() {
 
     const data = [
         {
-            name: "Page A",
-            uv: 4000,
-            pv: 2400,
-            amt: 2400
+            day: '2020-07-01',
+            kilogram: 80,
+            calories: 240
         },
         {
-            name: "Page B",
-            uv: 3000,
-            pv: 1398,
-            amt: 2210
+            day: '2020-07-02',
+            kilogram: 80,
+            calories: 220
         },
         {
-            name: "Page C",
-            uv: 2000,
-            pv: 7800,
-            amt: 2290
+            day: '2020-07-03',
+            kilogram: 81,
+            calories: 280
         },
         {
-            name: "Page D",
-            uv: 2780,
-            pv: 3908,
-            amt: 2000
+            day: '2020-07-04',
+            kilogram: 81,
+            calories: 290
         },
         {
-            name: "Page E",
-            uv: 1890,
-            pv: 4800,
-            amt: 2181
+            day: '2020-07-05',
+            kilogram: 80,
+            calories: 160
         },
         {
-            name: "Page F",
-            uv: 2390,
-            pv: 3800,
-            amt: 2500
+            day: '2020-07-06',
+            kilogram: 78,
+            calories: 162
         },
         {
-            name: "Page G",
-            uv: 3490,
-            pv: 4300,
-            amt: 2100
+            day: '2020-07-07',
+            kilogram: 76,
+            calories: 390
         }
     ]
 
     return <>
         <section className="dailyActivity_container">
-            <div>
-                <div>Activité quotidienne</div>
-                <div><i class="fa-solid fa-circle"></i>Poids (kg)</div>
-                <div><i class="fa-solid fa-circle"></i>Calories brûlées (kCal)</div>
+            <div className="title_calories_kg">
+                <div className="title">Activité quotidienne</div>
+                <div>
+                    <div className="kg"><i class="fa-solid fa-circle"></i>Poids (kg)</div>
+                    <div className="title"><i class="fa-solid fa-circle"></i>Calories brûlées (kCal)</div>
+                </div>
             </div>
             <ResponsiveContainer width="100%" height="80%">
-                <BarChart
-                    data={data}
-
-                >
+                <BarChart data={data}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
-                    <XAxis dataKey="name" tickLine={false} tickMargin={20} />
+                    <XAxis dataKey="day" tickLine={false} tickMargin={20} tickFormatter={formatXAxis} />
                     <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={40} orientation="right" />
                     <Tooltip />
-                    <Bar barSize={7} dataKey="pv" radius={[5, 5, 0, 0]} fill="#282D30" />
-                    <Bar barSize={7} dataKey="uv" radius={[5, 5, 0, 0]} fill="#E60000" />
+                    <Bar barSize={7} dataKey="kilogram" radius={[5, 5, 0, 0]} fill="#282D30" />
+                    <Bar barSize={7} dataKey="calories" radius={[5, 5, 0, 0]} fill="#E60000" />
                 </BarChart>
             </ResponsiveContainer>
 
