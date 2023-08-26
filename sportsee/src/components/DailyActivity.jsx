@@ -66,7 +66,7 @@ export function DailyActivity() {
                 <BarChart margin={{
                     top: 5,
                     right: 30,
-                    left: 20,
+                    left: 30,
                     bottom: 5
                 }} data={data}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
