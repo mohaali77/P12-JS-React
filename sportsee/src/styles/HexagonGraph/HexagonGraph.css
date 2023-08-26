@@ -2,7 +2,18 @@
   width: 235px;
   height: 240px;
   border-radius: 5px;
-  background: blue;
+  background: #282D30;
+  color: white;
+}
+.hexagonGraph_container .recharts-polar-grid-angle {
+  display: none;
+}
+.hexagonGraph_container .recharts-polygon .angleAxis {
+  margin-bottom: 10px;
+}
+.hexagonGraph_container .recharts-text {
+  fill: #fff;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1110px) {
