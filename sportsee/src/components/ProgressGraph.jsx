@@ -5,11 +5,11 @@ import "../styles/ProgressGraph/ProgressGraph.css"; // Assurez-vous d'avoir les 
 
 export function ProgressGraph() {
 
-    let percentage = 75; // Remplacez par le pourcentage souhaité
+    let percentage = 100; // Remplacez par le pourcentage souhaité
 
     const data = [
-        { value: percentage },
-        { value: 100 - percentage }
+        { value: 100 - percentage },
+        { value: percentage }
     ];
 
     return (
@@ -35,8 +35,8 @@ export function ProgressGraph() {
                         paddingAngle={0}
                         cornerRadius={10}
                     >
-                        <Cell key="cell-0" fill='#E60000' />
                         <Cell key="cell-1" display='none' />
+                        <Cell key="cell-0" fill='#E60000' />
                     </Pie>
                 </PieChart>
             </div>
