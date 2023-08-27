@@ -19,7 +19,7 @@ export function ProgressGraph() {
                     {percentage}% <br />
                     <span>de votre <br /> objectif</span>
                 </div>
-                <PieChart >
+                <PieChart width={200} height={200}  >
                     <Pie
                         data={data}
                         dataKey="value"
@@ -30,8 +30,7 @@ export function ProgressGraph() {
                         startAngle={90}
                         endAngle={-270}
                         paddingAngle={0}
-                        isAnimationActive={false}
-                        cornerRadius={10} // Ajustez cette valeur pour arrondir les coins
+                        cornerRadius={10}
                     >
                         <Cell key="cell-0" fill='#E60000' />
                         <Cell key="cell-1" display='none' />
