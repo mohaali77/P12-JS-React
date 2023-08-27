@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 import "../styles/ProgressGraph/ProgressGraph.css"; // Assurez-vous d'avoir les styles CSS appropriés
 
@@ -16,9 +16,10 @@ export function ProgressGraph() {
         <section className="progressGraph_container">
             <div className="percentage-circle-chart">
                 <div className="percentage">
-                    {percentage}%
+                    {percentage}% <br />
+                    <span>de votre <br /> objectif</span>
                 </div>
-                <PieChart width={120} height={120}>
+                <PieChart >
                     <Pie
                         data={data}
                         dataKey="value"

@@ -2,7 +2,7 @@
   width: 235px;
   height: 240px;
   border-radius: 5px;
-  background: #f4f4f4;
+  background: #FBFBFB;
 }
 
 .percentage-circle-chart {
@@ -11,6 +11,8 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  width: 100%;
+  height: 100%;
 }
 
 .percentage {
