@@ -3,14 +3,15 @@
     height: 295px;
     border-radius: 5px;
     margin-bottom: 20px;
-    background: #f4f4f4;
+    background: #FBFBFB;
 
     .title_calories_kg {
         font-size: 13px;
         display: flex;
         margin-bottom: 50px;
         align-items: center;
-        margin: 0px 30px 50px 30px;
+        margin: 30px 30px 50px 30px;
+        justify-content: space-between;
 
         .title {
             font-weight: bold;

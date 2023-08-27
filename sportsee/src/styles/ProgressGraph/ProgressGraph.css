@@ -2,7 +2,23 @@
   width: 235px;
   height: 240px;
   border-radius: 5px;
-  background: red;
+  background: #f4f4f4;
+}
+
+.percentage-circle-chart {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 @media screen and (max-width: 1110px) {
