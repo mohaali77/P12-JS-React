@@ -16,7 +16,7 @@
     position: absolute;
     display: flex;
     text-align: center;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: bold;
     z-index: 1;
     width: 100%;
@@ -33,7 +33,7 @@
 
 
 .score {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     z-index: 0;
     margin-left: 25px;
@@ -44,5 +44,21 @@
     .progressGraph_container {
         width: 185px;
         height: 195px;
+
+        .percentage-circle-chart {
+            position: relative;
+            top: -15%;
+            left: -5%;
+        }
+
+        .score {
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 0;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+
     }
 }
