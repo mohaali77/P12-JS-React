@@ -5,7 +5,7 @@ import "../styles/ProgressGraph/ProgressGraph.css"; // Assurez-vous d'avoir les 
 
 export function ProgressGraph() {
 
-    let percentage = 100; // Remplacez par le pourcentage souhaité
+    let percentage = 62; // Remplacez par le pourcentage souhaité
 
     const data = [
         { value: 100 - percentage },
