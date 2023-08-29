@@ -61,6 +61,7 @@ export function DurationGraph() {
                         dot={false} //supprimes les points du graph
 
                     />
+                    <Tooltip dataKey="pv" />
                 </LineChart >
             </ResponsiveContainer >
             <ul className="daysWeek">
