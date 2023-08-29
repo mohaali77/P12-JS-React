@@ -45,18 +45,18 @@ const data = [
     },
 ];
 
+const daysOfWeek = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']; // Noms des jours de la semaine
+
+
 export function DurationGraph() {
 
     return <>
         <section className="durationGraph_container">
-            <div className="durationGraph_part"></div>
 
-        </section>
-    </>
-}
+            <ResponsiveContainer width="100%" height="100%">
 
-/*<ResponsiveContainer width="100%" height="100%">
                 <LineChart width={300} height={100} data={data}>
+                    <XAxis color='black' dataKey="name" tick={{ fontSize: 10 }} ticks={daysOfWeek} /> {/* Utilisation de XAxis avec les jours de la semaine */}
                     <Line
                         type="monotone"
                         dataKey="pv"
@@ -64,5 +64,8 @@ export function DurationGraph() {
                         strokeWidth={2}
                         dot={false} //supprimes les points du graph
                     />
-                </LineChart>
-            </ResponsiveContainer>*/
+                </LineChart >
+            </ResponsiveContainer >
+        </section>
+    </>
+}

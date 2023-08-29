@@ -6,8 +6,8 @@
 }
 .durationGraph_container .durationGraph_part {
   display: flex;
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 20%;
   background: black;
 }
 
