@@ -2,7 +2,13 @@
   width: 235px;
   height: 240px;
   border-radius: 5px;
-  background: green;
+  background: #FF0000;
+}
+.durationGraph_container .durationGraph_part {
+  display: flex;
+  height: 50%;
+  width: 50%;
+  background: black;
 }
 
 @media screen and (max-width: 1110px) {
