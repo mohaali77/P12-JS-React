@@ -9,6 +9,7 @@ export async function getData(userId) {
     try {
         const response = await axios.get(`${API_URL}user/${userId}`);
         console.log(response.data);
+        return response.data
     } catch (error) {
         console.error(error);
     }

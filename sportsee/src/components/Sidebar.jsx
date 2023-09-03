@@ -3,7 +3,8 @@ import musculation from '../images/icon/musculation.png'
 import ridebike from '../images/icon/ridebike.png'
 import swim from '../images/icon/swim.png'
 
-export function Sidebar() {
+export function Sidebar({ fetchedData }) {
+    console.log(fetchedData.data);
     return <>
         <nav className='navigateProfile'>
             <div className='sportSelection'>

@@ -44,14 +44,18 @@ export function ProfilePage() {
             }
         }
         getDataLoad();
-    }, [id]);
+    }, []);
 
+    const userInfos = data.data
+
+    console.log(userInfos);
 
     return <>
-        <Sidebar />
+        <Sidebar fetchedData={data} />
         <main className='main_profile_container'>
             <section className='welcolme_container'>
-                <div className='welcolme_message'>Bonjour <span className='red'>Prénom</span></div>
+                <div className='welcolme_message'>Bonjour
+                    <span className='red'> </span></div>
                 <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
             </section>
             <section className='dashbord'>
