@@ -46,10 +46,6 @@ export function ProfilePage() {
         getDataLoad();
     }, []);
 
-    const userInfos = data.data
-
-    console.log(userInfos);
-
     return <>
         <Sidebar fetchedData={data} />
         <main className='main_profile_container'>
