@@ -3,14 +3,13 @@
 
 import axios from 'axios';
 
-const instance = axios.create({
-    baseURL: 'http://localhost:3000/'
-});
+const API_URL = 'http://localhost:3000/'
 
-export const fetchData = async (endpoint) => {
+
+export async function getData(userId) {
     try {
-        const response = await instance.get(endpoint);
-        return response.data;
+        const { response } = await axios.get(`${API_URL}user/${userId}`);
+        console.log(response);
     } catch (error) {
         throw error;
     }

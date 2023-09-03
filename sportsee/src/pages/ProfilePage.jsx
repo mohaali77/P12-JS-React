@@ -19,8 +19,20 @@ import iconProtein from '../images/macro/protein-icon.png'
 import iconCalories from '../images/macro/calories-icon.png'
 import iconFat from '../images/macro/fat-icon.png'
 import iconCarbs from '../images/macro/carbs-icon.png'
+import { useEffect, useState } from 'react'
+import { getData } from '../data/service'
 
 export function ProfilePage() {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        async function getDataLoad() {
+            const data = await getData()
+            setData(data)
+        }
+        getDataLoad()
+    })
+
     return <>
         <Sidebar />
         <main className='main_profile_container'>
