@@ -23,15 +23,15 @@ import { useEffect, useState } from 'react'
 import { getData } from '../data/service'
 
 export function ProfilePage() {
-    const [data, setData] = useState([])
+    /*const [data, setData] = useState([])
 
     useEffect(() => {
         async function getDataLoad() {
-            const data = await getData('12')
+            const data = await getData()
             setData(data)
         }
         getDataLoad()
-    })
+    })*/
 
     return <>
         <Sidebar />
