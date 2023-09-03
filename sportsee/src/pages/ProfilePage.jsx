@@ -46,17 +46,19 @@ export function ProfilePage() {
         getDataLoad();
     }, []);
 
+
     const userInfos = data && data.userInfos;
     let firstName
     let lastName
 
+    //on vérifie que les data existe sont correctement initialisé pour accéder au userInfos
     if (userInfos) {
         firstName = userInfos.firstName
         lastName = userInfos.lastName
     }
 
     return <>
-        <Sidebar fetchedData={data} />
+        <Sidebar />
         <main className='main_profile_container'>
             <section className='welcolme_container'>
                 <div className='welcolme_message'>Bonjour
