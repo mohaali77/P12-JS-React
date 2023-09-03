@@ -34,7 +34,7 @@ export function ProfilePage() {
             try {
                 const fetchedData = await getData(id);
                 if (fetchedData) {
-                    setData(fetchedData);
+                    setData(fetchedData.data);
                 } else {
                     // Gérez les erreurs ou traitez les cas où les données ne sont pas disponibles
                 }
@@ -46,12 +46,21 @@ export function ProfilePage() {
         getDataLoad();
     }, []);
 
+    const userInfos = data && data.userInfos;
+    let firstName
+    let lastName
+
+    if (userInfos) {
+        firstName = userInfos.firstName
+        lastName = userInfos.lastName
+    }
+
     return <>
         <Sidebar fetchedData={data} />
         <main className='main_profile_container'>
             <section className='welcolme_container'>
                 <div className='welcolme_message'>Bonjour
-                    <span className='red'> </span></div>
+                    <span className='red'>{' ' + firstName + ' ' + lastName} </span></div>
                 <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
             </section>
             <section className='dashbord'>
