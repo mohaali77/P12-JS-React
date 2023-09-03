@@ -4,6 +4,7 @@ import { ProfilePage } from "./pages/ProfilePage";
 function App() {
   return <Routes>
     <Route path="/" element={<ProfilePage />} />
+    <Route path="/:id" element={<ProfilePage />} />
   </Routes>
 }
 

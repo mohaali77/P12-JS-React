@@ -27,7 +27,7 @@ export function ProfilePage() {
 
     useEffect(() => {
         async function getDataLoad() {
-            const data = await getData()
+            const data = await getData('12')
             setData(data)
         }
         getDataLoad()
