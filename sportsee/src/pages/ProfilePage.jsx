@@ -21,17 +21,31 @@ import iconFat from '../images/macro/fat-icon.png'
 import iconCarbs from '../images/macro/carbs-icon.png'
 import { useEffect, useState } from 'react'
 import { getData } from '../data/service'
+import { useParams } from 'react-router-dom'
 
 export function ProfilePage() {
-    /*const [data, setData] = useState([])
+    const [data, setData] = useState([])
+
+    const { id } = useParams();
+    console.log(id);
 
     useEffect(() => {
         async function getDataLoad() {
-            const data = await getData()
-            setData(data)
+            try {
+                const fetchedData = await getData(id);
+                if (fetchedData) {
+                    setData(fetchedData);
+                } else {
+                    // Gérez les erreurs ou traitez les cas où les données ne sont pas disponibles
+                }
+            } catch (error) {
+                console.error(error);
+                // Gérez les erreurs ici
+            }
         }
-        getDataLoad()
-    })*/
+        getDataLoad();
+    }, [id]);
+
 
     return <>
         <Sidebar />

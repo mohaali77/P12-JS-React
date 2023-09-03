@@ -3,14 +3,14 @@
 
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/'
-
+const API_URL = 'http://localhost:3000/';
 
 export async function getData(userId) {
     try {
-        const { response } = await axios.get(`${API_URL}user/${userId}`);
-        console.log(response);
+        const response = await axios.get(`${API_URL}user/${userId}`);
+        console.log(response.data);
     } catch (error) {
-        throw error;
+        console.error(error);
     }
-};
+}
+
