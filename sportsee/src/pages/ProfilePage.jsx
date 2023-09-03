@@ -47,14 +47,23 @@ export function ProfilePage() {
     }, []);
 
 
-    const userInfos = data && data.userInfos;
+    const userInfos = data && data.userInfos
+    const keyData = data && data.keyData
+    let calories
+    let protein
+    let carbs
+    let lipid
     let firstName
     let lastName
 
     //on vérifie que les data existe sont correctement initialisé pour accéder au userInfos
-    if (userInfos) {
+    if (userInfos && keyData) {
         firstName = userInfos.firstName
         lastName = userInfos.lastName
+        calories = keyData.calorieCount
+        protein = keyData.proteinCount
+        carbs = keyData.carbohydrateCount
+        lipid = keyData.lipidCount
     }
 
     return <>
@@ -75,10 +84,10 @@ export function ProfilePage() {
             </section>
 
             <section className="macro_container">
-                <MacroNutrients values_name='Calories' img_macro={iconCalories} />
-                <MacroNutrients values_name='Proteines' img_macro={iconProtein} />
-                <MacroNutrients values_name='Lipides' img_macro={iconCarbs} />
-                <MacroNutrients values_name='Glucides' img_macro={iconFat} />
+                <MacroNutrients value={calories} values_name='Calories' img_macro={iconCalories} />
+                <MacroNutrients value={protein} values_name='Proteines' img_macro={iconProtein} />
+                <MacroNutrients value={lipid} values_name='Lipides' img_macro={iconCarbs} />
+                <MacroNutrients value={carbs} values_name='Glucides' img_macro={iconFat} />
             </section>
         </main>
 
