@@ -83,10 +83,10 @@ export function ProfilePage() {
             </section>
 
             <section className="macro_container">
-                <MacroNutrients value={calories} values_name='Calories' img_macro={iconCalories} />
-                <MacroNutrients value={protein} values_name='Proteines' img_macro={iconProtein} />
-                <MacroNutrients value={lipid} values_name='Lipides' img_macro={iconCarbs} />
-                <MacroNutrients value={carbs} values_name='Glucides' img_macro={iconFat} />
+                <MacroNutrients value={calories + 'g'} values_name='Calories' img_macro={iconCalories} />
+                <MacroNutrients value={protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
+                <MacroNutrients value={lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
+                <MacroNutrients value={carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
             </section>
         </main>
 
