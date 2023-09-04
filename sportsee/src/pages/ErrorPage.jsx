@@ -1,21 +1,13 @@
 import { NavLink, Link } from "react-router-dom";
-import { USER_MAIN_DATA } from '../data/mock.js'
 
-export default function HomePage() {
-
-    const data = USER_MAIN_DATA
+export function ErrorPage() {
 
     return <>
-        <ul className='homeUsers'>
-            {
-                data.map(data =>
-                    <Link to={`/user/${data.id}`} key={data.id}>
-                        <li>
-                            User : {data.userInfos.firstName}
-                        </li>
-                    </Link>
-                )}
-        </ul>
+        <section id='error'>
+            <div id='errorNumber'>404</div>
+            <div id='errorMessage'>Oups! La page que vous demandez n'existe pas.</div>
+            <div id='returnHome'><Link to='/'>Retourner sur la page d’accueil</Link></div>
+        </section>
     </>;
 };
 

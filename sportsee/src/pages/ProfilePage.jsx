@@ -19,15 +19,15 @@ import iconProtein from '../images/macro/protein-icon.png'
 import iconCalories from '../images/macro/calories-icon.png'
 import iconFat from '../images/macro/fat-icon.png'
 import iconCarbs from '../images/macro/carbs-icon.png'
+
 import { useEffect, useState } from 'react'
 import { getData } from '../data/service'
-import { useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 
 export function ProfilePage() {
     const [data, setData] = useState([])
 
     const { id } = useParams();
-    console.log(id);
 
     useEffect(() => {
         async function getDataLoad() {
@@ -45,7 +45,6 @@ export function ProfilePage() {
         }
         getDataLoad();
     }, []);
-
 
     const userInfos = data && data.userInfos
     const keyData = data && data.keyData
