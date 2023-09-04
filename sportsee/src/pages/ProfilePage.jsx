@@ -36,11 +36,9 @@ export function ProfilePage() {
                 if (fetchedData) {
                     setData(fetchedData.data);
                 } else {
-                    // Gérez les erreurs ou traitez les cas où les données ne sont pas disponibles
                 }
             } catch (error) {
                 console.error(error);
-                // Gérez les erreurs ici
             }
         }
         getDataLoad();
