@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { ProfilePage } from "./pages/ProfilePage";
-import HomePage from "./pages/HomePage";
-import { ErrorPage } from "./pages/ErrorPage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   return <Routes>
