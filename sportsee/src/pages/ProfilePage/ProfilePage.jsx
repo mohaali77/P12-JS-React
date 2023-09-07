@@ -1,11 +1,12 @@
-import '../index.css'
+import '../../index.css'
+import './style/ProfilePage.css'
 
 import { Sidebar } from '../../components/Sidebar/Sidebar'
 import { MacroNutrients } from '../../components/MacroNutrients/MacroNutrients'
 import { DailyActivity } from '../../components/DailyActivity/DailyActivity'
-import { DurationGraph } from '../components/DurationGraph'
+import { DurationGraph } from '../../components/DurationGraph/DurationGraph'
 import { HexagonGraph } from '../../components/HexagonGraph/HexagonGraph'
-import { ProgressGraph } from '../components/ProgressGraph'
+import { ProgressGraph } from '../../components/ProgressGraph/ProgressGraph'
 
 import iconProtein from '../../images/macro/protein-icon.png'
 import iconCalories from '../../images/macro/calories-icon.png'

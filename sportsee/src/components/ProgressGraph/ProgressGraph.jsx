@@ -1,7 +1,6 @@
 import './style/ProgressGraph.css'
 import { PieChart, Pie, Cell } from "recharts";
 
-import "../styles/ProgressGraph/ProgressGraph.css"; // Assurez-vous d'avoir les styles CSS appropriés
 
 export function ProgressGraph() {
 

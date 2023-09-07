@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import { USER_MAIN_DATA } from '../data/mock.js'
+import { USER_MAIN_DATA } from '../../data/mock.js'
 
 export default function HomePage() {
 
