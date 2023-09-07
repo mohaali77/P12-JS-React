@@ -16,7 +16,7 @@ import iconCarbs from '../../images/macro/carbs-icon.png'
 import { useEffect, useState } from 'react'
 import { getData } from '../../data/service'
 import { useParams } from 'react-router-dom'
-import { mockData } from '../../data/mock.js'
+import mockData from '../../data/mock.js'
 
 
 export function ProfilePage() {
