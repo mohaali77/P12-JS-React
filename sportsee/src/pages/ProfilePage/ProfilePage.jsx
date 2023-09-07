@@ -1,18 +1,10 @@
-import '../styles/MacroNutrients/MacroNutrients.css'
-import '../styles/Header/Header.css'
-import '../styles/Sidebar/Sidebar.css'
-import '../styles/DailyActivity/DailyActivity.css'
-import '../styles/ProgressGraph/ProgressGraph.css'
-import '../styles/HexagonGraph/HexagonGraph.css'
-import '../styles/DurationGraph/DurationGraph.css'
-import '../styles/ProfilePage/ProfilePage.css'
-import '../styles/General.css'
+import '../index.css'
 
-import { Sidebar } from '../components/Sidebar'
-import { MacroNutrients } from '../components/MacroNutrients'
-import { DailyActivity } from '../components/DailyActivity'
+import { Sidebar } from '../../components/Sidebar/Sidebar'
+import { MacroNutrients } from '../../components/MacroNutrients/MacroNutrients'
+import { DailyActivity } from '../../components/DailyActivity/DailyActivity'
 import { DurationGraph } from '../components/DurationGraph'
-import { HexagonGraph } from '../components/HexagonGraph'
+import { HexagonGraph } from '../../components/HexagonGraph/HexagonGraph'
 import { ProgressGraph } from '../components/ProgressGraph'
 
 import iconProtein from '../images/macro/protein-icon.png'
@@ -21,10 +13,11 @@ import iconFat from '../images/macro/fat-icon.png'
 import iconCarbs from '../images/macro/carbs-icon.png'
 
 import { useEffect, useState } from 'react'
-import { getData } from '../data/service'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { getData } from '../../data/service'
+import { useParams } from 'react-router-dom'
 
 export function ProfilePage() {
+
     const [data, setData] = useState([])
 
     const { id } = useParams();
