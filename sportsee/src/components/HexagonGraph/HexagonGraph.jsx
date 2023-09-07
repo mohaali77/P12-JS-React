@@ -1,3 +1,4 @@
+import './style/HexagonGraph.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 export function HexagonGraph() {
