@@ -1,3 +1,5 @@
+import './style/DurationGraph.css'
+
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [

@@ -1,3 +1,5 @@
+import './style/DailyActivity.css'
+
 import {
     BarChart,
     Bar,

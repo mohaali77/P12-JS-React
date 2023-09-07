@@ -35,7 +35,7 @@ export function ProfilePage() {
             }
         }
         getDataLoad();
-    }, []);
+    }, [id]);
 
     const userInfos = data && data.userInfos
     const keyData = data && data.keyData
