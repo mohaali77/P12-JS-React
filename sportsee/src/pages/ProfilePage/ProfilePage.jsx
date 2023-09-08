@@ -73,11 +73,11 @@ export function ProfilePage() {
                 <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
             </section>
             <section className='dashbord'>
-                <DailyActivity />
+                <DailyActivity data={mockData.USER_ACTIVITY} />
                 <section className='graph_container'>
-                    <DurationGraph />
-                    <HexagonGraph />
-                    <ProgressGraph />
+                    <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
+                    <HexagonGraph data={mockData.USER_PERFORMANCE} />
+                    <ProgressGraph data={mockData.USER_MAIN_DATA} />
                 </section>
             </section>
 
