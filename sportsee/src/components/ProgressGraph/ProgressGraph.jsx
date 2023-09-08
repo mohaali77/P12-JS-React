@@ -45,6 +45,5 @@ export function ProgressGraph(mockData) {
                 </PieChart>
             </div>
         </section>
-        /** */
     );
 }
