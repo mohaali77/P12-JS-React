@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import './style/DailyActivity.css'
 
 import {
@@ -15,45 +16,10 @@ const formatXAxis = (tickItem) => {
     return `${date.getDate()}`;
 };
 
-export function DailyActivity() {
+export function DailyActivity(mockData) {
 
-    const data = [
-        {
-            day: '2020-07-01',
-            kilogram: 80,
-            calories: 240
-        },
-        {
-            day: '2020-07-02',
-            kilogram: 80,
-            calories: 220
-        },
-        {
-            day: '2020-07-03',
-            kilogram: 81,
-            calories: 280
-        },
-        {
-            day: '2020-07-04',
-            kilogram: 81,
-            calories: 290
-        },
-        {
-            day: '2020-07-05',
-            kilogram: 80,
-            calories: 160
-        },
-        {
-            day: '2020-07-06',
-            kilogram: 78,
-            calories: 162
-        },
-        {
-            day: '2020-07-07',
-            kilogram: 76,
-            calories: 390
-        }
-    ]
+    const { id } = useParams()
+    const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
 
     return <>
         <section className="dailyActivity_container">
@@ -70,7 +36,7 @@ export function DailyActivity() {
                     right: 30,
                     left: 30,
                     bottom: 5
-                }} data={data}>
+                }} data={dataUserId.sessions}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
                     <XAxis dataKey="day" tickLine={false} tickMargin={17} tickFormatter={formatXAxis} />
                     <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={30} orientation="right" />
