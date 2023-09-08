@@ -1,7 +1,8 @@
+import { useParams } from 'react-router-dom';
 import './style/HexagonGraph.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-export function HexagonGraph() {
+export function HexagonGraph(mockData) {
     const data = [
         {
             subject: 'Intensité',
@@ -40,6 +41,11 @@ export function HexagonGraph() {
             fullMark: 150,
         },
     ]
+
+    const { id } = useParams()
+    const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
+    console.log(dataUserId);
+
     return <>
         <section className="hexagonGraph_container">
 

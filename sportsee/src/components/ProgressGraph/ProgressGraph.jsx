@@ -1,10 +1,15 @@
 import './style/ProgressGraph.css'
 import { PieChart, Pie, Cell } from "recharts";
+import { useParams } from 'react-router-dom';
 
 
-export function ProgressGraph() {
+export function ProgressGraph(mockData) {
 
-    let percentage = 62; // Remplacez par le pourcentage souhaité
+    const { id } = useParams()
+    const dataUserId = mockData.data.find(obj => obj.id === Number(id));
+    console.log(dataUserId.todayScore);
+
+    let percentage = dataUserId.todayScore * 100;
 
     const data = [
         { value: 100 - percentage },
