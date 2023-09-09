@@ -7,9 +7,14 @@ export function ProgressGraph(mockData) {
 
     const { id } = useParams()
     const dataUserId = mockData.data.find(obj => obj.id === Number(id));
-    console.log(dataUserId.todayScore);
 
-    let percentage = dataUserId.todayScore * 100;
+    let percentage
+
+    if (dataUserId.todayScore) {
+        percentage = dataUserId.todayScore * 100;
+    } else if (dataUserId.score) {
+        percentage = dataUserId.score * 100;
+    }
 
     const data = [
         { value: 100 - percentage },
