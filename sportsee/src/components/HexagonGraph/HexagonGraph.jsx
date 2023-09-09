@@ -5,46 +5,43 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 export function HexagonGraph(mockData) {
     const data = [
         {
-            subject: 'Intensité',
-            A: 120,
-            B: 110,
-            fullMark: 150,
+            value: 80,
+            subject: 'intensité'
         },
         {
-            subject: 'Vitesse',
-            A: 98,
-            B: 130,
-            fullMark: 150,
+            value: 120,
+            subject: 'vitesse'
         },
         {
-            subject: 'Force',
-            A: 86,
-            B: 130,
-            fullMark: 150,
+            value: 140,
+            subject: 'force'
         },
         {
-            subject: 'Endurance',
-            A: 99,
-            B: 100,
-            fullMark: 150,
+            value: 50,
+            subject: 'endurance'
         },
         {
-            subject: 'Energie',
-            A: 85,
-            B: 90,
-            fullMark: 150,
+            value: 200,
+            subject: 'energie'
         },
         {
-            subject: 'Cardio',
-            A: 65,
-            B: 85,
-            fullMark: 150,
-        },
+            value: 90,
+            subject: 'cardio'
+        }
     ]
 
     const { id } = useParams()
     const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
-    console.log(dataUserId);
+    console.log(dataUserId.data)
+    console.log(dataUserId.kind);
+    let kind = dataUserId.kind
+
+    /*const dataWithNames = dataUserId.data.map(item => ({
+        ...item,
+        subject: kind: [item.kind]
+    }));
+
+    console.log('aaaaa' + dataWithNames);*/
 
     return <>
         <section className="hexagonGraph_container">
@@ -53,7 +50,7 @@ export function HexagonGraph(mockData) {
                 <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
                     <PolarGrid margin={{ top: 10, bottom: 10 }} />
                     <PolarAngleAxis dataKey="subject" />
-                    <Radar name="Mike" dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
+                    <Radar name="Mike" dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
                 </RadarChart>
             </ResponsiveContainer>
 
