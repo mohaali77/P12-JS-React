@@ -10,6 +10,11 @@
 
         li {
             margin: 20px;
+            width: 300px;
+
+            &:hover {
+                border-bottom: 2px solid black;
+            }
         }
     }
 

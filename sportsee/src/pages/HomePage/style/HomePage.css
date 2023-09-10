@@ -10,4 +10,8 @@
 }
 .users a li {
   margin: 20px;
+  width: 300px;
+}
+.users a li:hover {
+  border-bottom: 2px solid black;
 }/*# sourceMappingURL=HomePage.css.map */
