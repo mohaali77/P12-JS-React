@@ -1,10 +1,32 @@
 import { useParams } from 'react-router-dom';
 import './style/HexagonGraph.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import { getDataPerformance } from '../../data/service'
+import { useEffect, useState } from 'react';
 
 export function HexagonGraph(mockData) {
 
     const { id } = useParams()
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        async function getDataLoad() {
+            try {
+                const fetchedData = await getDataPerformance(id);
+                if (fetchedData) {
+                    setData(fetchedData.data);
+                } else {
+                    setData(mockData.data.find(obj => obj.userId === Number(id)));
+                }
+            } catch (error) {
+                setData(mockData.data.find(obj => obj.userId === Number(id)));
+                console.log(error);
+            }
+        }
+        getDataLoad();
+    }, [id]);
+
     const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
     const kind = dataUserId.kind
 
