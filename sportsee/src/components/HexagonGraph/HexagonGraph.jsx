@@ -27,22 +27,24 @@ export function HexagonGraph(mockData) {
         getDataLoad();
     }, [id]);
 
-    const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
-    const kind = dataUserId.kind
+    let dataWithNames = [];
 
-    const dataWithNames = dataUserId.data.map(item => ({
-        ...item,
-        subject: kind[item.kind]
-    }));
+    if (data && data.kind) {
+        const kind = data.kind;
 
-    console.log(dataWithNames);
+        dataWithNames = data.data.map(item => ({
+            ...item,
+            subject: kind[item.kind]
+        }));
+    }
 
     return <>
         <section className="hexagonGraph_container">
 
             <ResponsiveContainer width="100%" height="100%">
                 <RadarChart cx="50%" cy="50%" outerRadius="70%"
-                    data={dataWithNames}>
+                    data={dataWithNames}
+                >
                     <PolarGrid margin={{ top: 10, bottom: 10 }} />
                     <PolarAngleAxis dataKey="subject" />
                     <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
