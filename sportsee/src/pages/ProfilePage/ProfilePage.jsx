@@ -76,7 +76,7 @@ export function ProfilePage() {
                 <section className='graph_container'>
                     <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
                     <HexagonGraph data={mockData.USER_PERFORMANCE} />
-                    <ProgressGraph data={mockData.USER_MAIN_DATA} />
+                    <ProgressGraph data={data} />
                 </section>
             </section>
 
