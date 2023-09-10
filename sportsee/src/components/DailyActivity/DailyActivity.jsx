@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom';
+import { getDataSessions } from '../../data/service'
+import { useEffect, useState } from 'react';
 import './style/DailyActivity.css'
 
 import {
@@ -19,7 +21,27 @@ const formatXAxis = (tickItem) => {
 export function DailyActivity(mockData) {
 
     const { id } = useParams()
-    const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        async function getDataLoad() {
+            try {
+                const fetchedData = await getDataSessions(id);
+                if (fetchedData) {
+                    setData(fetchedData.data);
+                } else {
+                    setData(mockData.data.find(obj => obj.userId === Number(id)));
+                }
+            } catch (error) {
+                setData(mockData.data.find(obj => obj.userId === Number(id)));
+                console.log(error);
+            }
+        }
+        getDataLoad();
+    }, [id]);
+
+    console.log(data);
 
     return <>
         <section className="dailyActivity_container">
@@ -36,7 +58,7 @@ export function DailyActivity(mockData) {
                     right: 30,
                     left: 30,
                     bottom: 5
-                }} data={dataUserId.sessions}>
+                }} data={data.sessions}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
                     <XAxis dataKey="day" tickLine={false} tickMargin={17} tickFormatter={formatXAxis} />
                     <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={30} orientation="right" />
