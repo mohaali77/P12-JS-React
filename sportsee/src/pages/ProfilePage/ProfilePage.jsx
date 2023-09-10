@@ -23,12 +23,9 @@ export function ProfilePage() {
 
     const { id } = useParams();
 
-    // récupération données via mock
-    const data = mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id));
+    // récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
 
-    // récupération données via API
-
-    /*const [data, setData] = useState([])
+    const [data, setData] = useState([])
 
     useEffect(() => {
         async function getDataLoad() {
@@ -37,13 +34,15 @@ export function ProfilePage() {
                 if (fetchedData) {
                     setData(fetchedData.data);
                 } else {
+                    setData(mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id)));
                 }
             } catch (error) {
-                console.error(error);
+                setData(mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id)));
+                console.log(error);
             }
         }
         getDataLoad();
-    }, [id]);*/
+    }, [id]);
 
     const userInfos = data && data.userInfos
     const keyData = data && data.keyData
