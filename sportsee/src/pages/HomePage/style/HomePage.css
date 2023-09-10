@@ -1,1 +1,13 @@
-/*# sourceMappingURL=HomePage.css.map */
+.users {
+  list-style: none;
+  margin-top: 50px;
+}
+.users a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+.users a li {
+  margin: 20px;
+}/*# sourceMappingURL=HomePage.css.map */

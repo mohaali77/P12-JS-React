@@ -1,17 +1,18 @@
 import { NavLink, Link } from "react-router-dom";
 import { USER_MAIN_DATA } from '../../data/mock.js'
+import './style/HomePage.css'
 
 export default function HomePage() {
 
     const data = USER_MAIN_DATA
 
     return <>
-        <ul className='homeUsers'>
+        <ul className='users'>
             {
-                data.map(data =>
+                data.map((data, index) =>
                     <Link to={`/user/${data.id}`} key={data.id}>
                         <li>
-                            User : {data.userInfos.firstName}
+                            Utilisateur{' ' + (index + 1)} : {data.userInfos.firstName}
                         </li>
                     </Link>
                 )}
