@@ -6,8 +6,6 @@ import { getData } from '../../data/service'
 
 export function ProgressGraph(mockData) {
 
-    console.log(mockData);
-
     const { id } = useParams()
 
     const [data, setData] = useState([])
@@ -28,8 +26,6 @@ export function ProgressGraph(mockData) {
         }
         getDataLoad();
     }, [id]);
-
-    console.log(data);
 
     let percentage
 
