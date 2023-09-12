@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { getDataSessions } from '../../data/service'
+import { getDataActivity } from '../../data/service'
 import { useEffect, useState } from 'react';
 import './style/DailyActivity.css'
 
@@ -27,7 +27,7 @@ export function DailyActivity(mockData) {
     useEffect(() => {
         async function getDataLoad() {
             try {
-                const fetchedData = await getDataSessions(id);
+                const fetchedData = await getDataActivity(id);
                 if (fetchedData) {
                     setData(fetchedData.data);
                 } else {
