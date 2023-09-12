@@ -41,8 +41,6 @@ export function DailyActivity(mockData) {
         getDataLoad();
     }, [id]);
 
-    console.log(data);
-
     return <>
         <section className="dailyActivity_container">
             <div className="title_calories_kg">
