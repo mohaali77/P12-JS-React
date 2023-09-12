@@ -1,19 +1,40 @@
 import './style/DurationGraph.css'
 import { useParams } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { getDataSessions } from '../../data/service';
+import { useState, useEffect } from 'react';
 
 export function DurationGraph(mockData) {
 
     const { id } = useParams()
-    const dataUserId = mockData.data.find(obj => obj.userId === Number(id));
-    console.log(dataUserId.sessions);
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        async function getDataLoad() {
+            try {
+                const fetchedData = await getDataSessions(id);
+                if (fetchedData) {
+                    setData(fetchedData.data);
+                } else {
+                    setData(mockData.data.find(obj => obj.userId === Number(id)));
+                }
+            } catch (error) {
+                setData(mockData.data.find(obj => obj.userId === Number(id)));
+                console.log(error);
+            }
+        }
+        getDataLoad();
+    }, [id]);
+
+    console.log(data.sessions);
 
     return <>
         <section className="durationGraph_container">
             <div className="durationGraph_part"></div>
             <div className="durationSessions">Durée moyenne des <br /> sessions</div>
             <ResponsiveContainer width="100%" height="55%" >
-                <LineChart width={300} height={100} data={dataUserId.sessions}>
+                <LineChart width={300} height={100} data={data.sessions}>
                     <Line
                         type="monotone"
                         dataKey="sessionLength"
