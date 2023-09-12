@@ -1,6 +1,5 @@
 header {
     display: flex;
-    color: #ffff;
     background: black;
     align-items: center;
     font-size: 20px;
@@ -16,5 +15,10 @@ header {
         display: flex;
         width: 100%;
         justify-content: space-around;
+    }
+
+    a {
+        text-decoration: none;
+        color: #ffff;
     }
 }
