@@ -7,13 +7,14 @@
         color: black;
         font-size: 25px;
         font-weight: bold;
+        transition: font-size 0.2s;
 
         li {
             margin: 20px;
-            width: 300px;
 
             &:hover {
-                border-bottom: 2px solid black;
+                color: #FF0101;
+                font-size: 26px;
             }
         }
     }

@@ -44,7 +44,7 @@ export function ProfilePage() {
         getDataLoad();
     }, [id]);
 
-
+    //si l'id n'est pas trouvé, on renvoie sur la page d'erreur
     if (!mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id))) {
         return <Navigate to="/error" />;
     }

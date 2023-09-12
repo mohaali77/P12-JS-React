@@ -1,1 +1,28 @@
-/*# sourceMappingURL=ErrorPage.css.map */
+#error {
+  color: #FF0101;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#error #errorNumber {
+  font-size: 50px;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+#error #errorMessage {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+#error #returnHome {
+  margin-bottom: 100px;
+  border-bottom: 0.5px solid;
+  text-decoration: none;
+  font-size: 14px;
+}
+#error #returnHome a {
+  text-decoration: none;
+}
+#error #returnHome a:visited {
+  color: #FF0101;
+}/*# sourceMappingURL=ErrorPage.css.map */
