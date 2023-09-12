@@ -27,8 +27,6 @@ export function DurationGraph(mockData) {
         getDataLoad();
     }, [id]);
 
-    console.log(data.sessions);
-
     return <>
         <section className="durationGraph_container">
             <div className="durationGraph_part"></div>
