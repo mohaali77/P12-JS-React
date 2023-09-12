@@ -15,7 +15,7 @@ import iconCarbs from '../../images/macro/carbs-icon.png'
 
 import { useEffect, useState } from 'react'
 import { getData } from '../../data/service'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import mockData from '../../data/mock.js'
 
 
@@ -43,6 +43,13 @@ export function ProfilePage() {
         }
         getDataLoad();
     }, [id]);
+
+
+    if (!mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id))) {
+        return <Navigate to="/error" />;
+    }
+
+
 
     const userInfos = data && data.userInfos
     const keyData = data && data.keyData

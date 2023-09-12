@@ -38,11 +38,13 @@ export function HexagonGraph(mockData) {
         }));
     }
 
+    console.log(dataWithNames);
+
     return <>
         <section className="hexagonGraph_container">
 
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="70%"
+                <RadarChart cx="50%" cy="50%" outerRadius="60%"
                     data={dataWithNames}
                 >
                     <PolarGrid margin={{ top: 10, bottom: 10 }} />
