@@ -39,16 +39,16 @@
   color: #E60000;
   margin-right: 8px;
 }
-.dailyActivity_container .custom-tooltip {
+.dailyActivity_container .tooltip {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #E60000;
   color: #fff;
-  width: 39px;
-  height: 63px;
-  font-size: 10px;
+  width: 46px;
+  height: 70px;
+  font-size: 11px;
 }
 
 @media screen and (max-width: 1110px) {
