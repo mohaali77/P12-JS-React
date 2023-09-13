@@ -45,6 +45,15 @@
             }
         }
     }
+
+    .custom-tooltip {
+        display: flex;
+
+        background: #E60000;
+        color: #fff;
+        width: 39px;
+        height: 63px;
+    }
 }
 
 @media screen and (max-width: 1110px) {
