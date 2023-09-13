@@ -71,7 +71,7 @@ export function DailyActivity(mockData) {
                                     </div>
                                 );
                             }
-                            return null; // Si payload est null ou non défini, n'affiche rien
+                            return null;
                         }}
                     />
 

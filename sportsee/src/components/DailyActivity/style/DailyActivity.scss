@@ -48,11 +48,14 @@
 
     .custom-tooltip {
         display: flex;
-
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background: #E60000;
         color: #fff;
         width: 39px;
         height: 63px;
+        font-size: 10px;
     }
 }
 
