@@ -60,7 +60,21 @@ export function DailyActivity(mockData) {
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
                     <XAxis dataKey="day" tickLine={false} tickMargin={17} tickFormatter={formatXAxis} />
                     <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={30} orientation="right" />
-                    <Tooltip />
+                    <Tooltip
+                        content={({ payload }) => {
+                            if (payload && payload[0] && payload[0].payload) {
+                                const session = payload[0].payload;
+                                return (
+                                    <div className="custom-tooltip">
+                                        <p>{session.kilogram}</p>
+                                        <p>{session.calories}</p>
+                                    </div>
+                                );
+                            }
+                            return null; // Si payload est null ou non défini, n'affiche rien
+                        }}
+                    />
+
                     <Bar barSize={7} dataKey="kilogram" radius={[5, 5, 0, 0]} fill="#282D30" />
                     <Bar barSize={7} dataKey="calories" radius={[5, 5, 0, 0]} fill="#E60000" />
                 </BarChart>
