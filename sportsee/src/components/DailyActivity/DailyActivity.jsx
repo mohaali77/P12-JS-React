@@ -65,7 +65,7 @@ export function DailyActivity(mockData) {
                             if (payload && payload[0] && payload[0].payload) {
                                 const session = payload[0].payload;
                                 return (
-                                    <div className="custom-tooltip">
+                                    <div className="tooltip">
                                         <p>{session.kilogram}</p>
                                         <p>{session.calories}</p>
                                     </div>
