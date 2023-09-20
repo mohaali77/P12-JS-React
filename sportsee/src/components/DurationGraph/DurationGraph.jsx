@@ -27,6 +27,8 @@ export function DurationGraph(mockData) {
         getDataLoad();
     }, [id]);
 
+    console.log(data);
+
     return <>
         <section className="durationGraph_container">
             <div className="durationGraph_part"></div>
@@ -41,7 +43,17 @@ export function DurationGraph(mockData) {
                         dot={false} //supprimes les points du graph
 
                     />
-                    <Tooltip dataKey="day" />
+                    <Tooltip content={({ payload }) => {
+                        if (payload && payload[0] && payload[0].payload) {
+                            const session = payload[0].payload;
+                            return (
+                                <div className="tooltip_duration">
+                                    <p>{session.sessionLength} min</p>
+                                </div>
+                            );
+                        }
+                        return null;
+                    }} />
                 </LineChart >
             </ResponsiveContainer >
             <ul className="daysWeek">

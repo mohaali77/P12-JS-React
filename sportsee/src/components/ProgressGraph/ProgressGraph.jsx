@@ -1,5 +1,5 @@
 import './style/ProgressGraph.css'
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getData } from '../../data/service'
