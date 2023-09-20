@@ -51,7 +51,7 @@
     font-weight: bold;
   }
   .main_profile_container .welcolme_container .welcolme_message .red {
-    color: red;
+    color: #FF0000;
   }
   .main_profile_container .dashbord {
     display: flex;
