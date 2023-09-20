@@ -57,7 +57,7 @@ export function ProfilePage() {
     let errorApiMsg
 
     if (isApiDataExist.current === false) {
-        errorApiMsg = '(API Indisponible. Les données sont mockés)'
+        errorApiMsg = '(API Indisponible. Les données sont mockés !!!)'
     }
 
     //si l'id n'est pas trouvé, on renvoie sur la page d'erreur
@@ -90,7 +90,7 @@ export function ProfilePage() {
             <section className='welcolme_container'>
                 <div className='welcolme_message'>Bonjour
                     <span className='red'>{' ' + firstName + ' ' + lastName} </span>
-                    <div className='error'>{errorApiMsg}</div>
+                    <div className='errorApiMsg'>{errorApiMsg}</div>
                 </div>
                 <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
             </section>

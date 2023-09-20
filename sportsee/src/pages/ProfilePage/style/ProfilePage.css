@@ -17,6 +17,11 @@
 .main_profile_container .welcolme_container .welcolme_message .red {
   color: red;
 }
+.main_profile_container .welcolme_container .welcolme_message .errorApiMsg {
+  font-size: 13px;
+  margin-top: 10px;
+  color: red;
+}
 .main_profile_container .dashbord {
   display: flex;
   flex-direction: column;
