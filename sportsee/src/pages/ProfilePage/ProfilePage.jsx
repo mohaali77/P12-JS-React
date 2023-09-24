@@ -37,6 +37,7 @@ export function ProfilePage() {
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
 
+            // Standardisation des données. Si la données ne correspond pas, on renvoie une erreur. 
             if (typeof lastName !== 'string' || lastName.trim() === '') {
                 return new Error('Le nom doit être une chaîne de caractères non vide.');
             }
@@ -70,7 +71,7 @@ export function ProfilePage() {
         }
     }
 
-    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les donnéeS du mock ou de l'API
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
     let newUser = new User('aa', 'aa', 0, 0, 0, 0)
 
     // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
@@ -80,10 +81,12 @@ export function ProfilePage() {
         async function getDataLoad() {
             try {
                 const fetchedData = await getData(id);
+                //Si les données de l'API sont accessibles, on les récupères, et on définit la variable isApiDataExist sur true
                 if (fetchedData) {
                     setData(fetchedData.data);
                     isApiDataExist.current = true
                 } else {
+                    //Sinon on récupère les données du mock, et on définit la variable isApiDataExist sur false
                     setData(mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id)));
                     isApiDataExist.current = false
                 }

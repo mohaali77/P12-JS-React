@@ -1,5 +1,10 @@
+
+
 import { Link } from "react-router-dom";
+// Import Données
 import { USER_MAIN_DATA } from '../../data/mock.js'
+
+// Import CSS
 import './style/HomePage.css'
 
 export default function HomePage() {
