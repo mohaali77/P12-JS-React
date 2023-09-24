@@ -27,13 +27,13 @@ import mockData from '../../data/mock.js'
 
 export function ProfilePage() {
 
-    //variable qui va vérifier si les données de l'API existent
-    let isApiDataExist = useRef(
-        false);
+    // Variable qui va vérifier si les données de l'API existent
+    let isApiDataExist = useRef(false);
 
+    // On récupère l'id présent dans l'URL
     const { id } = useParams();
 
-    //On créé la classe de modélisation. 
+    // On créé la classe de modélisation. 
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
             this.lastName = lastName;
@@ -45,10 +45,10 @@ export function ProfilePage() {
         }
     }
 
+    // On crée la varibale newUser qui va nous permettre de 
     let newUser = new User('', '', 0, 0, 0, 0)
 
-    // récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
-
+    // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -90,10 +90,7 @@ export function ProfilePage() {
             data.keyData.proteinCount);
     }
 
-    console.log(newUser);
-
     return <>
-
         <Sidebar />
         <main className='main_profile_container'>
             <section className='welcolme_container'>
@@ -119,7 +116,6 @@ export function ProfilePage() {
                 <MacroNutrients value={newUser.carbs + 'g'} values_name='Glucides' img_macro={iconFat} />
             </section>
         </main >
-
     </>
 }
 
