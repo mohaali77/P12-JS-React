@@ -38,11 +38,11 @@ export function ProfilePage() {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
 
             if (typeof lastName !== 'string' || lastName.trim() === '') {
-                throw new Error('Le nom doit être une chaîne de caractères non vide.');
+                return new Error('Le nom doit être une chaîne de caractères non vide.');
             }
 
             if (typeof firstName !== 'string' || firstName.trim() === '') {
-                return new Error('Le nom doit être une chaîne de caractères non vide.');
+                return new Error('Le prénom doit être une chaîne de caractères non vide.');
             }
 
             if (typeof lipid !== 'number') {
@@ -70,10 +70,8 @@ export function ProfilePage() {
         }
     }
 
-    // On crée la varibale newUser qui va nous permettre de 
-    let newUser = new User('aa', '', 0, '0', 0, 0)
-
-    console.log(newUser);
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les donnéeS du mock ou de l'API
+    let newUser = new User('aa', 'aa', 0, 0, 0, 0)
 
     // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
@@ -95,7 +93,7 @@ export function ProfilePage() {
             }
         }
         getDataLoad();
-    }, [id]);
+    }, [id])
 
     // Si isApiDataExist est égal à false, ça veut dire que les données de l'API ne sont pas dispo, donc on affiche un message d'erreur
     let errorApiMsg = ''
@@ -108,7 +106,7 @@ export function ProfilePage() {
         return <Navigate to="/error" />;
     }
 
-    // Si les données sont bien accessibles, alors ont
+    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les donnée API/Mock
     if (data && data.userInfos && data.keyData) {
         newUser = new User(data.userInfos.lastName,
             data.userInfos.firstName,
