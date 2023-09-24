@@ -1,6 +1,8 @@
+//Import CSS
 import '../../index.css'
 import './style/ProfilePage.css'
 
+//Import Composants
 import { Sidebar } from '../../components/Sidebar/Sidebar'
 import { MacroNutrients } from '../../components/MacroNutrients/MacroNutrients'
 import { DailyActivity } from '../../components/DailyActivity/DailyActivity'
@@ -8,24 +10,27 @@ import { DurationGraph } from '../../components/DurationGraph/DurationGraph'
 import { HexagonGraph } from '../../components/HexagonGraph/HexagonGraph'
 import { ProgressGraph } from '../../components/ProgressGraph/ProgressGraph'
 
+//Import Icônes/Images
 import iconProtein from '../../images/macro/protein-icon.png'
 import iconCalories from '../../images/macro/calories-icon.png'
 import iconFat from '../../images/macro/fat-icon.png'
 import iconCarbs from '../../images/macro/carbs-icon.png'
 
+//Import Fonctionnalités, Hook, Bibliothèque...
 import { useEffect, useState, useRef } from 'react'
 import { getData } from '../../data/service'
 import { Navigate, useParams } from 'react-router-dom'
+
+//Import Données Mock
 import mockData from '../../data/mock.js'
 
 
 export function ProfilePage() {
 
-    //on créé la classe de modélisation. 
-
+    //On créé la classe de modélisation. 
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
-            this.lastname = lastName;
+            this.lastName = lastName;
             this.firstName = firstName;
             this.lipid = lipid;
             this.carbs = carbs;
@@ -43,7 +48,6 @@ export function ProfilePage() {
     const [data, setData] = useState([])
 
     let isApiDataExist = useRef(false);
-    console.log('isApiDataExistRef:', isApiDataExist.current)
 
     useEffect(() => {
         async function getDataLoad() {
@@ -64,9 +68,7 @@ export function ProfilePage() {
         getDataLoad();
     }, [id]);
 
-    console.log(data);
-
-    let errorApiMsg
+    let errorApiMsg = ''
 
     if (isApiDataExist.current === false) {
         errorApiMsg = '(API Indisponible. Les données sont mockés !!!)'
@@ -107,10 +109,10 @@ export function ProfilePage() {
             </section>
 
             <section className="macro_container">
-                <MacroNutrients value={newUser.calories + 'g'} values_name='Calories' img_macro={iconCalories} />
+                <MacroNutrients value={newUser.calories + 'kCal'} values_name='Calories' img_macro={iconCalories} />
                 <MacroNutrients value={newUser.protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
                 <MacroNutrients value={newUser.lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
-                <MacroNutrients value={newUser.carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
+                <MacroNutrients value={newUser.carbs + 'g'} values_name='Glucides' img_macro={iconFat} />
             </section>
         </main >
 
