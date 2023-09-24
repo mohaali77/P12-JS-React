@@ -21,23 +21,20 @@ import mockData from '../../data/mock.js'
 
 export function ProfilePage() {
 
-    class Rectangle {
+    class userInfos {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
             this.lastname = lastName;
             this.firstName = firstName;
             this.lipid = lipid;
             this.carbs = carbs;
+            this.calories = calories;
+            this.protein = protein;
         }
-
     }
-
-
 
     const { id } = useParams();
 
     // récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
-
-    //const data = mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id))
 
     const [data, setData] = useState([])
 
@@ -76,7 +73,9 @@ export function ProfilePage() {
         return <Navigate to="/error" />;
     }
 
-    const userInfos = data && data.userInfos
+    const newUser = new userInfos(apiData.firstName, apiData.lastName);
+
+    /*const userInfos = data && data.userInfos
     const keyData = data && data.keyData
     let calories
     let protein
@@ -93,7 +92,7 @@ export function ProfilePage() {
         protein = keyData.proteinCount
         carbs = keyData.carbohydrateCount
         lipid = keyData.lipidCount
-    }
+    }*/
 
     return <>
         <Sidebar />
