@@ -17,10 +17,21 @@ import { useEffect, useState, useRef } from 'react'
 import { getData } from '../../data/service'
 import { Navigate, useParams } from 'react-router-dom'
 import mockData from '../../data/mock.js'
-import { ErrorAPI } from '../../components/ErrorAPI/ErrorAPI'
 
 
 export function ProfilePage() {
+
+    class Rectangle {
+        constructor(lastname, name, age, city) {
+            this.name = name;
+            this.lastname = lastname;
+            this.city = city;
+            this.age = age;
+        }
+
+    }
+
+
 
     const { id } = useParams();
 
