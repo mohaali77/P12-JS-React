@@ -27,6 +27,12 @@ import mockData from '../../data/mock.js'
 
 export function ProfilePage() {
 
+    //variable qui va vérifier si les données de l'API existent
+    let isApiDataExist = useRef(
+        false);
+
+    const { id } = useParams();
+
     //On créé la classe de modélisation. 
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
@@ -41,13 +47,9 @@ export function ProfilePage() {
 
     let newUser = new User('', '', 0, 0, 0, 0)
 
-    const { id } = useParams();
-
     // récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
 
     const [data, setData] = useState([])
-
-    let isApiDataExist = useRef(false);
 
     useEffect(() => {
         async function getDataLoad() {
@@ -87,6 +89,8 @@ export function ProfilePage() {
             data.keyData.calorieCount,
             data.keyData.proteinCount);
     }
+
+    console.log(newUser);
 
     return <>
 
