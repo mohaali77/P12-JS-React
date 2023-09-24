@@ -36,6 +36,31 @@ export function ProfilePage() {
     // On créé la classe de modélisation. 
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
+
+            if (typeof lastName !== 'string' || lastName.trim() === '') {
+                throw new Error('Le nom doit être une chaîne de caractères non vide.');
+            }
+
+            if (typeof firstName !== 'string' || firstName.trim() === '') {
+                return new Error('Le nom doit être une chaîne de caractères non vide.');
+            }
+
+            if (typeof lipid !== 'number') {
+                return new Error('lipid doit être un nombre');
+            }
+
+            if (typeof carbs !== 'number') {
+                return new Error('carbs doit être un nombre');
+            }
+
+            if (typeof calories !== 'number') {
+                return new Error('calories doit être un nombre.');
+            }
+
+            if (typeof protein !== 'number') {
+                return new Error('protein doit être un nombre');
+            }
+
             this.lastName = lastName;
             this.firstName = firstName;
             this.lipid = lipid;
@@ -46,7 +71,9 @@ export function ProfilePage() {
     }
 
     // On crée la varibale newUser qui va nous permettre de 
-    let newUser = new User('', '', 0, 0, 0, 0)
+    let newUser = new User('aa', '', 0, '0', 0, 0)
+
+    console.log(newUser);
 
     // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
@@ -70,17 +97,18 @@ export function ProfilePage() {
         getDataLoad();
     }, [id]);
 
+    // Si isApiDataExist est égal à false, ça veut dire que les données de l'API ne sont pas dispo, donc on affiche un message d'erreur
     let errorApiMsg = ''
-
     if (isApiDataExist.current === false) {
         errorApiMsg = '(API Indisponible. Les données sont mockés !!!)'
     }
 
-    //si l'id n'est pas trouvé, on renvoie sur la page d'erreur
+    // Si l'id n'est pas trouvé, on renvoie sur la page d'erreur
     if (!mockData.USER_MAIN_DATA.find(obj => obj.id === Number(id))) {
         return <Navigate to="/error" />;
     }
 
+    // Si les données sont bien accessibles, alors ont
     if (data && data.userInfos && data.keyData) {
         newUser = new User(data.userInfos.lastName,
             data.userInfos.firstName,
