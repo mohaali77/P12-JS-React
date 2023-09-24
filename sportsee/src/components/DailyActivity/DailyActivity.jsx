@@ -1,6 +1,11 @@
-import { useParams } from 'react-router-dom';
+// Import Données API
 import { getDataActivity } from '../../data/service'
+
+//Import Fonctionnalités, Hook, Bibliothèque...
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+// Import CSS
 import './style/DailyActivity.css'
 
 import {

@@ -18,11 +18,12 @@ import iconCarbs from '../../images/macro/carbs-icon.png'
 
 //Import Fonctionnalités, Hook, Bibliothèque...
 import { useEffect, useState, useRef } from 'react'
-import { getData } from '../../data/service'
 import { Navigate, useParams } from 'react-router-dom'
 
-//Import Données Mock
+//Import Données Mock/API
 import mockData from '../../data/mock.js'
+import { getData } from '../../data/service'
+
 
 
 export function ProfilePage() {

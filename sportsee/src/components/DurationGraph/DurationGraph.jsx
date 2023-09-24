@@ -1,8 +1,9 @@
-import './style/DurationGraph.css'
 import { useParams } from 'react-router-dom';
 import { LineChart, Line, Tooltip, ResponsiveContainer } from 'recharts';
 import { getDataSessions } from '../../data/service';
 import { useState, useEffect } from 'react';
+import './style/DurationGraph.css'
+
 
 export function DurationGraph(mockData) {
 
