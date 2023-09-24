@@ -21,7 +21,9 @@ import mockData from '../../data/mock.js'
 
 export function ProfilePage() {
 
-    class userInfos {
+    //on créé la classe de modélisation. 
+
+    class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
             this.lastname = lastName;
             this.firstName = firstName;
@@ -31,6 +33,8 @@ export function ProfilePage() {
             this.protein = protein;
         }
     }
+
+    let newUser = new User('', '', 0, 0, 0, 0)
 
     const { id } = useParams();
 
@@ -73,10 +77,8 @@ export function ProfilePage() {
         return <Navigate to="/error" />;
     }
 
-    let newUser
-
     if (data && data.userInfos && data.keyData) {
-        newUser = new userInfos(data.userInfos.lastName,
+        newUser = new User(data.userInfos.lastName,
             data.userInfos.firstName,
             data.keyData.lipidCount,
             data.keyData.carbohydrateCount,
@@ -84,56 +86,35 @@ export function ProfilePage() {
             data.keyData.proteinCount);
     }
 
-    console.log(newUser);
+    return <>
 
-    /*const userInfos = data && data.userInfos
-    const keyData = data && data.keyData
-    let calories
-    let protein
-    let carbs
-    let lipid
-    let firstName
-    let lastName
+        <Sidebar />
+        <main className='main_profile_container'>
+            <section className='welcolme_container'>
+                <div className='welcolme_message'>Bonjour
+                    <span className='red'>{' ' + newUser.firstName + ' ' + newUser.lastName} </span>
+                    <div className='errorApiMsg'>{errorApiMsg}</div>
+                </div>
+                <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
+            </section>
+            <section className='dashbord'>
+                <DailyActivity data={mockData.USER_ACTIVITY} />
+                <section className='graph_container'>
+                    <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
+                    <HexagonGraph data={mockData.USER_PERFORMANCE} />
+                    <ProgressGraph data={mockData.USER_MAIN_DATA} />
+                </section>
+            </section>
 
-    //on vérifie que les data existe sont correctement initialisé pour accéder au userInfos
-    if (userInfos && keyData) {
-        firstName = userInfos.firstName
-        lastName = userInfos.lastName
-        calories = keyData.calorieCount
-        protein = keyData.proteinCount
-        carbs = keyData.carbohydrateCount
-        lipid = keyData.lipidCount
-    }*/
-    /*
-        return <>
-        
-            <Sidebar />
-            <main className='main_profile_container'>
-                <section className='welcolme_container'>
-                    <div className='welcolme_message'>Bonjour
-                        <span className='red'>{' ' + firstName + ' ' + lastName} </span>
-                        <div className='errorApiMsg'>{errorApiMsg}</div>
-                    </div>
-                    <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
-                </section>
-                <section className='dashbord'>
-                    <DailyActivity data={mockData.USER_ACTIVITY} />
-                    <section className='graph_container'>
-                        <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
-                        <HexagonGraph data={mockData.USER_PERFORMANCE} />
-                        <ProgressGraph data={mockData.USER_MAIN_DATA} />
-                    </section>
-                </section>
-    
-                <section className="macro_container">
-                    <MacroNutrients value={calories + 'g'} values_name='Calories' img_macro={iconCalories} />
-                    <MacroNutrients value={protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
-                    <MacroNutrients value={lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
-                    <MacroNutrients value={carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
-                </section>
-            </main >
-    
-        </>*/
+            <section className="macro_container">
+                <MacroNutrients value={newUser.calories + 'g'} values_name='Calories' img_macro={iconCalories} />
+                <MacroNutrients value={newUser.protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
+                <MacroNutrients value={newUser.lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
+                <MacroNutrients value={newUser.carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
+            </section>
+        </main >
+
+    </>
 }
 
 /*Assurer la qualité des données dans une application web
