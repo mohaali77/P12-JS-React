@@ -41,7 +41,6 @@ export function ProfilePage() {
     let isApiDataExist = useRef(false);
     console.log('isApiDataExistRef:', isApiDataExist.current)
 
-
     useEffect(() => {
         async function getDataLoad() {
             try {
@@ -61,6 +60,7 @@ export function ProfilePage() {
         getDataLoad();
     }, [id]);
 
+    console.log(data);
 
     let errorApiMsg
 
@@ -73,7 +73,18 @@ export function ProfilePage() {
         return <Navigate to="/error" />;
     }
 
-    const newUser = new userInfos(apiData.firstName, apiData.lastName);
+    let newUser
+
+    if (data && data.userInfos && data.keyData) {
+        newUser = new userInfos(data.userInfos.lastName,
+            data.userInfos.firstName,
+            data.keyData.lipidCount,
+            data.keyData.carbohydrateCount,
+            data.keyData.calorieCount,
+            data.keyData.proteinCount);
+    }
+
+    console.log(newUser);
 
     /*const userInfos = data && data.userInfos
     const keyData = data && data.keyData
@@ -93,35 +104,36 @@ export function ProfilePage() {
         carbs = keyData.carbohydrateCount
         lipid = keyData.lipidCount
     }*/
-
-    return <>
-        <Sidebar />
-        <main className='main_profile_container'>
-            <section className='welcolme_container'>
-                <div className='welcolme_message'>Bonjour
-                    <span className='red'>{' ' + firstName + ' ' + lastName} </span>
-                    <div className='errorApiMsg'>{errorApiMsg}</div>
-                </div>
-                <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
-            </section>
-            <section className='dashbord'>
-                <DailyActivity data={mockData.USER_ACTIVITY} />
-                <section className='graph_container'>
-                    <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
-                    <HexagonGraph data={mockData.USER_PERFORMANCE} />
-                    <ProgressGraph data={mockData.USER_MAIN_DATA} />
+    /*
+        return <>
+        
+            <Sidebar />
+            <main className='main_profile_container'>
+                <section className='welcolme_container'>
+                    <div className='welcolme_message'>Bonjour
+                        <span className='red'>{' ' + firstName + ' ' + lastName} </span>
+                        <div className='errorApiMsg'>{errorApiMsg}</div>
+                    </div>
+                    <div className='objective_message'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                 </section>
-            </section>
-
-            <section className="macro_container">
-                <MacroNutrients value={calories + 'g'} values_name='Calories' img_macro={iconCalories} />
-                <MacroNutrients value={protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
-                <MacroNutrients value={lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
-                <MacroNutrients value={carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
-            </section>
-        </main >
-
-    </>
+                <section className='dashbord'>
+                    <DailyActivity data={mockData.USER_ACTIVITY} />
+                    <section className='graph_container'>
+                        <DurationGraph data={mockData.USER_AVERAGE_SESSIONS} />
+                        <HexagonGraph data={mockData.USER_PERFORMANCE} />
+                        <ProgressGraph data={mockData.USER_MAIN_DATA} />
+                    </section>
+                </section>
+    
+                <section className="macro_container">
+                    <MacroNutrients value={calories + 'g'} values_name='Calories' img_macro={iconCalories} />
+                    <MacroNutrients value={protein + 'g'} values_name='Proteines' img_macro={iconProtein} />
+                    <MacroNutrients value={lipid + 'g'} values_name='Lipides' img_macro={iconCarbs} />
+                    <MacroNutrients value={carbs + 'kCal'} values_name='Glucides' img_macro={iconFat} />
+                </section>
+            </main >
+    
+        </>*/
 }
 
 /*Assurer la qualité des données dans une application web
