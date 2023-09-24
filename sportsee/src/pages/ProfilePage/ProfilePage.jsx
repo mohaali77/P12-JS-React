@@ -22,11 +22,11 @@ import mockData from '../../data/mock.js'
 export function ProfilePage() {
 
     class Rectangle {
-        constructor(lastname, name, age, city) {
-            this.name = name;
-            this.lastname = lastname;
-            this.city = city;
-            this.age = age;
+        constructor(lastName, firstName, lipid, carbs, calories, protein) {
+            this.lastname = lastName;
+            this.firstName = firstName;
+            this.lipid = lipid;
+            this.carbs = carbs;
         }
 
     }
