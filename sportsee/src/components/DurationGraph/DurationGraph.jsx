@@ -7,6 +7,7 @@ import './style/DurationGraph.css'
 
 export function DurationGraph(mockData) {
 
+    // On récupère l'id présent dans l'URL
     const { id } = useParams()
 
     const [data, setData] = useState([])
