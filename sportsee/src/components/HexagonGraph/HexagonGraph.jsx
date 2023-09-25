@@ -1,5 +1,8 @@
-import { useParams } from 'react-router-dom';
+// Import Données API
 import { getDataPerformance } from '../../data/service'
+
+//Import Fonctionnalités, Hook, Bibliothèque...
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 //Import CSS
@@ -12,7 +15,40 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 export function HexagonGraph(mockData) {
 
+    // On récupère l'id présent dans l'URL
     const { id } = useParams()
+
+    // On créé la classe de modélisation. 
+    class UserDuration {
+        constructor(data) {
+
+            // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
+            if (typeof data !== 'object') {
+                throw new Error('Chaque élément du tableau doit être un objet.');
+            }
+
+            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('sessionLength')) {
+                throw new Error('Les données doivent contenir les propriétés "day" et "sessionLength"');
+            }
+
+            if (typeof data.day !== 'number') {
+                throw new Error('La donnée "day" doit être un nombre');
+            }
+
+            if (typeof data.sessionLength !== 'number') {
+                throw new Error('La donnée "sessionLength" doit être un nombre');
+            }
+
+            this.day = data.day
+            this.sessionLength = data.sessionLength
+        }
+    }
+
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
+    let newUserDuration = new UserDuration({
+        day: 0,
+        sessionLength: 0,
+    })
 
     const [data, setData] = useState([])
 
@@ -33,9 +69,9 @@ export function HexagonGraph(mockData) {
         getDataLoad();
     }, [id]);
 
-    let dataWithNames = [];
+    if (data && data.data && data.kind) {
+        console.log(data);
 
-    if (data && data.kind) {
         const kind = data.kind;
 
         dataWithNames = data.data.map(item => ({
@@ -43,6 +79,9 @@ export function HexagonGraph(mockData) {
             subject: kind[item.kind]
         }));
     }
+
+    let dataWithNames = [];
+
 
     console.log(dataWithNames);
 
