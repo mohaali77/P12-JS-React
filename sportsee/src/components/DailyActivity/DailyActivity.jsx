@@ -8,15 +8,7 @@ import { useParams } from 'react-router-dom';
 // Import CSS
 import './style/DailyActivity.css'
 
-import {
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, } from "recharts";
 
 const formatXAxis = (tickItem) => {
     const date = new Date(tickItem);
