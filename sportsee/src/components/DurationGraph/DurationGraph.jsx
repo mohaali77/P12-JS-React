@@ -26,7 +26,7 @@ export function DurationGraph(mockData) {
                 throw new Error('Chaque élément du tableau doit être un objet.');
             }
 
-            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('kilogram') || !data.hasOwnProperty('calories')) {
+            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('sessionLenght')) {
                 throw new Error('Les données doivent contenir les propriétés "day", "kilogram" et "calories".');
             }
 
