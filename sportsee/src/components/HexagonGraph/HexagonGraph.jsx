@@ -1,8 +1,14 @@
 import { useParams } from 'react-router-dom';
-import './style/HexagonGraph.css'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { getDataPerformance } from '../../data/service'
 import { useEffect, useState } from 'react';
+
+//Import CSS
+import './style/HexagonGraph.css'
+
+// Import des composants "recharts" pour construire le graphique
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+
+
 
 export function HexagonGraph(mockData) {
 
