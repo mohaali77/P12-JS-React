@@ -49,6 +49,7 @@ export function DurationGraph(mockData) {
         sessionLenght: 0,
     })
 
+    // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -68,7 +69,14 @@ export function DurationGraph(mockData) {
         getDataLoad();
     }, [id]);
 
-    console.log(data);
+    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les données API/Mock
+    if (data && data.sessions) {
+        newUserDuration = data.sessions.map(data => new UserDuration({
+            day: data.day,
+            sessionLenght: data.sessionLenght,
+        }
+        ));
+    }
 
     return <>
         <section className="durationGraph_container">
