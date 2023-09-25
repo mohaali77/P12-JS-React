@@ -18,7 +18,7 @@ export function DurationGraph(mockData) {
     const { id } = useParams()
 
     // On créé la classe de modélisation. 
-    class UserSessions {
+    class UserDuration {
         constructor(data) {
 
             // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
@@ -30,31 +30,23 @@ export function DurationGraph(mockData) {
                 throw new Error('Les données doivent contenir les propriétés "day", "kilogram" et "calories".');
             }
 
-            if (typeof data.day !== 'string') {
-                throw new Error('La donnée "day" doit être un string');
+            if (typeof data.day !== 'number' || data.day < 0) {
+                throw new Error('La donnée "day" doit être un nombre');
             }
 
-            if (typeof data.kilogram !== 'number') {
-                throw new Error('La donnée "kilogram" doit être un nombre');
-            }
-
-            if (typeof data.calories !== 'number') {
-                throw new Error('La donnée "calories" doit être un nombre');
+            if (typeof data.sessionLenght !== 'number') {
+                throw new Error('La donnée "sessionLenght" doit être un nombre');
             }
 
             this.day = data.day
-            this.kilogram = data.kilogram
-            this.calories = data.calories
-
-
+            this.sessionLenght = data.sessionLenght
         }
     }
 
     // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
-    let newUserSessions = new UserSessions({
-        day: ' ',
-        kilogram: 0,
-        calories: 0
+    let newUserDuration = new UserDuration({
+        day: 0,
+        sessionLenght: 0,
     })
 
     const [data, setData] = useState([])
