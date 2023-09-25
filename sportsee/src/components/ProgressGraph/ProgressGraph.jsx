@@ -8,10 +8,12 @@ export function ProgressGraph({ todayScore }) {
 
     let percentage
 
+    // On multiplie la valeur par 100 pour obtenir le pourcentage
     if (todayScore) {
         percentage = todayScore * 100;
     }
 
+    // On récupères les valeurs qui serviront de données pour le graphique
     const pieChartData = [
         { value: 100 - percentage },
         { value: percentage }
