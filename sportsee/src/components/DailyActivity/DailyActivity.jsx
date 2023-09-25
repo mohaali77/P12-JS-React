@@ -21,9 +21,11 @@ export function DailyActivity(mockData) {
     // On récupère l'id présent dans l'URL
     const { id } = useParams()
 
+    // On créé la classe de modélisation. 
     class UserSessions {
         constructor(data) {
 
+            // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
             if (typeof data !== 'object') {
                 throw new Error('Chaque élément du tableau doit être un objet.');
             }
@@ -52,12 +54,14 @@ export function DailyActivity(mockData) {
         }
     }
 
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
     let newUserSessions = new UserSessions({
         day: ' ',
         kilogram: 0,
         calories: 0
     })
 
+    // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
 
     useEffect(() => {

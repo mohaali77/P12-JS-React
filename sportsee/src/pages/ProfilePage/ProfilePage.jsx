@@ -38,7 +38,7 @@ export function ProfilePage() {
     class User {
         constructor(lastName, firstName, lipid, carbs, calories, protein) {
 
-            // Standardisation des données. Si la données ne correspond pas, on renvoie une erreur. 
+            // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
             if (typeof lastName !== 'string' || lastName.trim() === '') {
                 return new Error('Le nom doit être une chaîne de caractères non vide.');
             }
