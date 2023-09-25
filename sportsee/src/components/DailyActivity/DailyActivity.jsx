@@ -11,18 +11,13 @@ import './style/DailyActivity.css'
 // Import des composants "recharts" pour construire le graphique
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, } from "recharts";
 
-const formatXAxis = (tickItem) => {
-    const date = new Date(tickItem);
-    return `${date.getDate()}`;
-};
-
 export function DailyActivity(mockData) {
 
     // On récupère l'id présent dans l'URL
     const { id } = useParams()
 
     // On créé la classe de modélisation. 
-    class UserSessions {
+    class UserActivity {
         constructor(data) {
 
             // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
@@ -55,7 +50,7 @@ export function DailyActivity(mockData) {
     }
 
     // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
-    let newUserSessions = new UserSessions({
+    let newUserActivity = new UserActivity({
         day: ' ',
         kilogram: 0,
         calories: 0
@@ -83,13 +78,19 @@ export function DailyActivity(mockData) {
 
     // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les données API/Mock
     if (data && data.sessions) {
-        newUserSessions = data.sessions.map(data => new UserSessions({
+        newUserActivity = data.sessions.map(data => new UserActivity({
             day: data.day,
             kilogram: data.kilogram,
             calories: data.calories
         }
         ));
     }
+
+    //Fonction qui convertira la date.
+    const formatXAxis = (tickItem) => {
+        const date = new Date(tickItem);
+        return `${date.getDate()}`;
+    };
 
     return <>
         <section className="dailyActivity_container">
@@ -106,7 +107,7 @@ export function DailyActivity(mockData) {
                     right: 30,
                     left: 30,
                     bottom: 5
-                }} data={newUserSessions}>
+                }} data={newUserActivity}>
                     <CartesianGrid strokeDasharray="2.5 2.5" vertical={false} />
                     <XAxis dataKey="day" tickLine={false} tickMargin={17} tickFormatter={formatXAxis} />
                     <YAxis axisLine={false} tickLine={false} YAxisId="right" tickCount={3} tickMargin={30} orientation="right" />

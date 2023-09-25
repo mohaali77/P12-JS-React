@@ -1,14 +1,61 @@
-import { useParams } from 'react-router-dom';
-import { LineChart, Line, Tooltip, ResponsiveContainer } from 'recharts';
+// Import Données API
 import { getDataSessions } from '../../data/service';
+
+//Import Fonctionnalités, Hook, Bibliothèque...
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
+// Import CSS
 import './style/DurationGraph.css'
+
+// Import des composants "recharts" pour construire le graphique
+import { LineChart, Line, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 export function DurationGraph(mockData) {
 
     // On récupère l'id présent dans l'URL
     const { id } = useParams()
+
+    // On créé la classe de modélisation. 
+    class UserSessions {
+        constructor(data) {
+
+            // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
+            if (typeof data !== 'object') {
+                throw new Error('Chaque élément du tableau doit être un objet.');
+            }
+
+            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('kilogram') || !data.hasOwnProperty('calories')) {
+                throw new Error('Les données doivent contenir les propriétés "day", "kilogram" et "calories".');
+            }
+
+            if (typeof data.day !== 'string') {
+                throw new Error('La donnée "day" doit être un string');
+            }
+
+            if (typeof data.kilogram !== 'number') {
+                throw new Error('La donnée "kilogram" doit être un nombre');
+            }
+
+            if (typeof data.calories !== 'number') {
+                throw new Error('La donnée "calories" doit être un nombre');
+            }
+
+            this.day = data.day
+            this.kilogram = data.kilogram
+            this.calories = data.calories
+
+
+        }
+    }
+
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
+    let newUserSessions = new UserSessions({
+        day: ' ',
+        kilogram: 0,
+        calories: 0
+    })
 
     const [data, setData] = useState([])
 
