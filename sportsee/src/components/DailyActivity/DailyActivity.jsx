@@ -77,6 +77,7 @@ export function DailyActivity(mockData) {
         getDataLoad();
     }, [id]);
 
+    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les données API/Mock
     if (data && data.sessions) {
         newUserSessions = data.sessions.map(data => new UserSessions({
             day: data.day,
@@ -85,8 +86,6 @@ export function DailyActivity(mockData) {
         }
         ));
     }
-
-    console.log(newUserSessions);
 
     return <>
         <section className="dailyActivity_container">

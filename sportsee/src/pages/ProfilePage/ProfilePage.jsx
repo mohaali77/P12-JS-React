@@ -110,7 +110,7 @@ export function ProfilePage() {
         return <Navigate to="/error" />;
     }
 
-    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les donnée API/Mock
+    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les données API/Mock
     if (data && data.userInfos && data.keyData) {
         newUser = new User(data.userInfos.lastName,
             data.userInfos.firstName,
