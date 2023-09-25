@@ -89,7 +89,7 @@ export function DurationGraph(mockData) {
                         dataKey="sessionLength"
                         stroke="#FFFF"
                         strokeWidth={2}
-                        dot={false} //supprimes les points du graph
+                        dot={false} //supprime les points du graph
 
                     />
                     <Tooltip content={({ payload }) => {
