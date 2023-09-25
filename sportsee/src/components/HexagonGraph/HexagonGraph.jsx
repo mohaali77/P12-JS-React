@@ -19,7 +19,7 @@ export function HexagonGraph(mockData) {
     const { id } = useParams()
 
     // On créé la classe de modélisation. 
-    class UserDuration {
+    class UserHexagon {
         constructor(data) {
 
             // Standardisation des données. Si la donnée ne correspond pas, on renvoie une erreur. 
@@ -27,29 +27,36 @@ export function HexagonGraph(mockData) {
                 throw new Error('Chaque élément du tableau doit être un objet.');
             }
 
-            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('sessionLength')) {
-                throw new Error('Les données doivent contenir les propriétés "day" et "sessionLength"');
+            if (!data.hasOwnProperty('value') || !data.hasOwnProperty('kind') || !data.hasOwnProperty('subject')) {
+                throw new Error('Les données doivent contenir les propriétés "value", "kind" et "subject"');
             }
 
-            if (typeof data.day !== 'number') {
-                throw new Error('La donnée "day" doit être un nombre');
+            if (typeof data.value !== 'number') {
+                throw new Error('La donnée "value" doit être un nombre');
             }
 
-            if (typeof data.sessionLength !== 'number') {
-                throw new Error('La donnée "sessionLength" doit être un nombre');
+            if (typeof data.kind !== 'number') {
+                throw new Error('La donnée "kind" doit être un nombre');
             }
 
-            this.day = data.day
-            this.sessionLength = data.sessionLength
+            if (typeof data.subject !== 'string') {
+                throw new Error('La donnée "subject" doit être un string');
+            }
+
+            this.value = data.value
+            this.kind = data.kind
+            this.subject = data.subject
         }
     }
 
     // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
-    let newUserDuration = new UserDuration({
-        day: 0,
-        sessionLength: 0,
+    let newUserHexagon = new UserHexagon({
+        value: 0,
+        kind: 0,
+        subject: 'aa'
     })
 
+    // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -69,28 +76,32 @@ export function HexagonGraph(mockData) {
         getDataLoad();
     }, [id]);
 
+    let dataCompleted = [];
+
+    // Si les données sont bien accessibles, alors ont met à jour l'instance de classe avec les données API/Mock
     if (data && data.data && data.kind) {
-        console.log(data);
 
         const kind = data.kind;
 
-        dataWithNames = data.data.map(item => ({
+        dataCompleted = data.data.map(item => ({
             ...item,
             subject: kind[item.kind]
         }));
+
+        newUserHexagon = dataCompleted.map(data => new UserHexagon({
+            value: data.value,
+            kind: data.kind,
+            subject: data.subject
+        }
+        ));
     }
-
-    let dataWithNames = [];
-
-
-    console.log(dataWithNames);
 
     return <>
         <section className="hexagonGraph_container">
 
             <ResponsiveContainer width="100%" height="100%">
                 <RadarChart cx="50%" cy="50%" outerRadius="60%"
-                    data={dataWithNames}
+                    data={newUserHexagon}
                 >
                     <PolarGrid margin={{ top: 10, bottom: 10 }} />
                     <PolarAngleAxis dataKey="subject" />
