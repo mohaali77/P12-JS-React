@@ -1,13 +1,22 @@
-import './style/ProgressGraph.css'
-import { PieChart, Pie, Cell, Tooltip } from "recharts";
+// Import Données API
+import { getData } from '../../data/service'
+
+//Import Fonctionnalités, Hook, Bibliothèque...
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getData } from '../../data/service'
+
+//Import CSS
+import './style/ProgressGraph.css'
+
+// Import des composants "recharts" pour construire le graphique
+import { PieChart, Pie, Cell } from "recharts";
 
 export function ProgressGraph(mockData) {
 
+    // On récupère l'id présent dans l'URL
     const { id } = useParams()
 
+    // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -27,6 +36,12 @@ export function ProgressGraph(mockData) {
         getDataLoad();
     }, [id]);
 
+    if (data) {
+        // console.log(todayScore);
+    }
+
+
+    console.log(data);
     let percentage
 
     if (data.todayScore) {

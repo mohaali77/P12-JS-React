@@ -11,8 +11,6 @@ import './style/HexagonGraph.css'
 // Import des composants "recharts" pour construire le graphique
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-
-
 export function HexagonGraph(mockData) {
 
     // On récupère l'id présent dans l'URL
