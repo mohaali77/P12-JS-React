@@ -26,27 +26,27 @@ export function DurationGraph(mockData) {
                 throw new Error('Chaque élément du tableau doit être un objet.');
             }
 
-            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('sessionLenght')) {
-                throw new Error('Les données doivent contenir les propriétés "day", "kilogram" et "calories".');
+            if (!data.hasOwnProperty('day') || !data.hasOwnProperty('sessionLength')) {
+                throw new Error('Les données doivent contenir les propriétés "day" et "sessionLength"');
             }
 
-            if (typeof data.day !== 'number' || data.day < 0) {
+            if (typeof data.day !== 'number') {
                 throw new Error('La donnée "day" doit être un nombre');
             }
 
-            if (typeof data.sessionLenght !== 'number') {
-                throw new Error('La donnée "sessionLenght" doit être un nombre');
+            if (typeof data.sessionLength !== 'number') {
+                throw new Error('La donnée "sessionLength" doit être un nombre');
             }
 
             this.day = data.day
-            this.sessionLenght = data.sessionLenght
+            this.sessionLength = data.sessionLength
         }
     }
 
     // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
     let newUserDuration = new UserDuration({
         day: 0,
-        sessionLenght: 0,
+        sessionLength: 0,
     })
 
     // Récupération données via API ou Mock si l'API n'est pas chargé ou qu'il y a une erreur
@@ -73,7 +73,7 @@ export function DurationGraph(mockData) {
     if (data && data.sessions) {
         newUserDuration = data.sessions.map(data => new UserDuration({
             day: data.day,
-            sessionLenght: data.sessionLenght,
+            sessionLength: data.sessionLength,
         }
         ));
     }
@@ -83,7 +83,7 @@ export function DurationGraph(mockData) {
             <div className="durationGraph_part"></div>
             <div className="durationSessions">Durée moyenne des <br /> sessions</div>
             <ResponsiveContainer width="100%" height="55%" >
-                <LineChart width={300} height={100} data={data.sessions}>
+                <LineChart width={300} height={100} data={newUserDuration}>
                     <Line
                         type="monotone"
                         dataKey="sessionLength"
