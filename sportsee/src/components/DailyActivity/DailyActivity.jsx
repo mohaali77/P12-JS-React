@@ -21,6 +21,53 @@ export function DailyActivity(mockData) {
     // On récupère l'id présent dans l'URL
     const { id } = useParams()
 
+    class UserSessions {
+        constructor(data) {
+
+            if (!Array.isArray(data)) {
+                throw new Error('Les données doivent être un tableau.');
+            }
+
+            this.sessions = data.map(data => {
+                if (typeof data !== 'object') {
+                    throw new Error('Chaque élément du tableau doit être un objet.');
+                }
+
+                if (typeof data !== 'object') {
+                    throw new Error('Les données doivent être un objet.');
+                }
+
+                if (!data.hasOwnProperty('day') || !data.hasOwnProperty('kilogram') || !data.hasOwnProperty('calories')) {
+                    throw new Error('Les données doivent contenir les propriétés "day", "kilogram" et "calories".');
+                }
+
+                if (typeof data.day !== 'string') {
+                    throw new Error('La donnée "day" doit être un string');
+                }
+
+                if (typeof data.kilogram !== 'number') {
+                    throw new Error('La donnée "kilogram" doit être un nombre');
+                }
+
+                if (typeof data.calories !== 'number') {
+                    throw new Error('La donnée "calories" doit être un nombre');
+                }
+            })
+
+            this.day = data.day;
+            this.kilogram = data.kilogram;
+            this.calories = data.calories;
+        }
+    }
+
+    let newUserSessions = new UserSessions([{
+        day: ' ',
+        kilogram: 0,
+        calories: 0
+    }])
+
+    console.log(newUserSessions);
+
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -39,6 +86,16 @@ export function DailyActivity(mockData) {
         }
         getDataLoad();
     }, [id]);
+
+    // On crée une nouvelle instance de la classe User qu'on mettra à jour avec les données du mock ou de l'API
+    let sessionList
+
+    if (data && data.sessions) {
+        //console.log(data);
+        //console.log(data.sessions);
+        //console.log(data.session);
+        sessionList = data.sessions.map(data => new UserSessions(data.day, data.kilogram, data.calories));
+    }
 
     return <>
         <section className="dailyActivity_container">
