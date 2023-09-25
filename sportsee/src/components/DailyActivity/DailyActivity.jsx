@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 // Import CSS
 import './style/DailyActivity.css'
 
+// Import des composants "recharts" pour construire le graphique
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, } from "recharts";
 
 const formatXAxis = (tickItem) => {
