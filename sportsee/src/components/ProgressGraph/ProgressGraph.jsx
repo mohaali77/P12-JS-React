@@ -17,7 +17,7 @@ export function ProgressGraph({ todayScore }) {
         { value: percentage }
     ];
 
-    return (
+    return <>
         <section className="progressGraph_container">
             <div className="percentage">
                 {percentage}% <br />
@@ -46,5 +46,5 @@ export function ProgressGraph({ todayScore }) {
                 </PieChart>
             </div>
         </section>
-    );
+    </>
 }
