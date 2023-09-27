@@ -168,17 +168,3 @@ export function ProfilePage() {
     </>
 }
 
-/*Assurer la qualité des données dans une application web
-Le code est complet quand :
-❒ Les données récupérées sont transformées en JSON.
-❒ Une classe de modélisation permet de formater les données une fois récupérées auprès de l’API.
-❒ Quelles que soient les données envoyées (mockées ou de l’API), ces dernières complètent les charts.
-Le code est pertinent quand :
-❒ L’étudiant peut changer la source des données (les données mockées et les données de l’API) en changeant uniquement le service utilisant l’API et la classe de modélisation. Le code des composants ne doit pas être changé.
-🎯 Interagir avec un service web
-Le code de l’API est complet quand :
-❒ Les données sont récupérées auprès de l’API.
-❒ L’étudiant utilise soit l’API Fetch, soit la librairie axios.
-Le code de l’API est pertinent quand :
-❒ Les calls API ont été réalisés dans un service situé en dehors d’un composant React.
-❒ Les cas d’erreurs (indisponibilité de l’API) ne font pas planter le site. Dans le cas d’une indisponibilité, un message d’erreur est affiché.*/
